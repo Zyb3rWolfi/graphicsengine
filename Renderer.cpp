@@ -27,6 +27,13 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
 
         // 3 - Set the final transform in the shader and draw the mesh
         shader.setMat4("model", finalTransform);
+
+        if (meshNode.texture != nullptr) {
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, meshNode.texture->texture); // Access your ID
+            shader.setInt("ourTexture", 0);
+        }
+
         meshNode.mesh->Draw();
     }
 

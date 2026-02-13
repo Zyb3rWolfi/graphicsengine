@@ -9,8 +9,9 @@
 // MeshNode Implementation
 // ============================================================================
 
-MeshNode::MeshNode(Mesh* m, glm::vec3 pos, glm::vec3 rot, glm::vec3 scale)
-    : mesh(m), localPosition(pos), localRotation(rot), localScale(scale) {}
+// Update the constructor
+MeshNode::MeshNode(Mesh* m, Texture* t, glm::vec3 pos, glm::vec3 rot, glm::vec3 scale)
+    : mesh(m), texture(t), localPosition(pos), localRotation(rot), localScale(scale) {}
 
 // Getting the local transform for the mesh node
 glm::mat4 MeshNode::GetLocalTransform() const {
@@ -42,8 +43,8 @@ glm::mat4 SceneNode::GetWorldTransform() const {
 }
 
 // Adding a child mesh with local transform
-void SceneNode::AddChildMesh(Mesh* mesh, glm::vec3 localPos, glm::vec3 localRot, glm::vec3 localScale) {
-    childMeshes.emplace_back(mesh, localPos, localRot, localScale);
+void SceneNode::AddChildMesh(Mesh* mesh,Texture* texture, glm::vec3 localPos, glm::vec3 localRot, glm::vec3 localScale) {
+    childMeshes.emplace_back(mesh,texture, localPos, localRot, localScale);
 }
 
 // Adding a child node to the scene node

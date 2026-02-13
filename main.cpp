@@ -75,19 +75,14 @@ int main() {
 
     // Create the scene
     Scenemap scene;
-
+    Texture text = Texture("Images/container.jpg");
+    Texture text2 = Texture("Images/log.jpg");
     // Create a root node at world position (0, 0, 0)
     auto rootNode1 = scene.AddRootNode(glm::vec3(0.0f, 0.0f, 0.0f));
     // Add child meshes with local transforms relative to the root node
-    rootNode1->AddChildMesh(&cube1, glm::vec3(0.0f, 0.0f, 0.0f));  // Center
-    rootNode1->AddChildMesh(&cube2, glm::vec3(2.0f, 0.0f, 0.0f));  // Right
+    rootNode1->AddChildMesh(&cube1, &text, glm::vec3(0.0f, 0.0f, 0.0f));
+    rootNode1->AddChildMesh(&cube2, &text2, glm::vec3(2.0f, 0.0f, 0.0f));
 
-    // Create another root node at a different world position
-    auto rootNode2 = scene.AddRootNode(glm::vec3(-3.0f, 2.0f, -5.0f));
-    rootNode2->AddChildMesh(&cube3, glm::vec3(0.0f, 0.0f, 0.0f));
-
-    Texture text = Texture("Images/container.jpg");
-    unsigned int texture = text.use();
 
     while (!glfwWindowShouldClose(window)) {
         float currentFrame = glfwGetTime();
@@ -114,7 +109,6 @@ int main() {
 
         // Bind texture
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture);
         glUniform1i(glGetUniformLocation(shader.ID, "ourTexture"), 0);
 
         // Render all root nodes and their children
