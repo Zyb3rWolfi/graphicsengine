@@ -14,6 +14,12 @@ add_executable(graphicsengine main.cpp
         Mesh.h
         ShapeFactory.cpp
         ShapeFactory.h
+        Camera.cpp
+        Camera.h
+        Scenemap.cpp
+        Scenemap.h
+        Renderer.cpp
+        Renderer.h
 )
 find_package(glfw3 CONFIG REQUIRED)
 target_link_libraries(graphicsengine PRIVATE glfw)

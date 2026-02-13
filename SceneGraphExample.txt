@@ -1,0 +1,164 @@
+NE GRAPH USAGE GUIDE
+========================
+
+The new Scenemap system implements a hierarchical scene graph with:
+- **SceneNodes**: Have world-space transforms (position, rotation, scale)
+- **MeshNodes**: Child meshes with local-space transforms relative to their parent
+- **Transform Hierarchy**: Moving a parent node moves all its children
+
+KEY CONCEPTS:
+-------------
+
+1. WORLD SPACE (SceneNode)
+   - The absolute position/rotation/scale in the world
+   - When you move/rotate the node, all children move with it
+
+2. LOCAL SPACE (MeshNode)
+   - Position/rotation/scale relative to the parent node
+   - Allows you to offset meshes from the parent
+
+3. TRANSFORM COMPOSITION
+   - Final transform = Parent World Transform × Child Local Transform
+   - This is done automatically in the render loop
+
+
+BASIC USAGE:
+------------
+
+// 1. Create a scene
+Scenemap scene;
+
+// 2. Create meshes (must persist in memory!)
+Mesh cube1 = factory.CreateCube();
+Mesh cube2 = factory.CreateCube();
+
+// 3. Add a root node at world position (x, y, z)
+auto node = scene.AddRootNode(glm::vec3(0.0f, 0.0f, -5.0f));
+
+// 4. Add child meshes with local offsets
+node->AddChildMesh(&cube1, glm::vec3(0.0f, 0.0f, 0.0f));   // Center
+node->AddChildMesh(&cube2, glm::vec3(2.0f, 0.0f, 0.0f));   // 2 units right
+
+
+MANIPULATING NODES:
+-------------------
+
+// Set absolute transform (replaces current values)
+node->SetPosition(glm::vec3(1.0f, 2.0f, 3.0f));
+node->SetRotation(glm::vec3(45.0f, 0.0f, 90.0f));  // degrees
+node->SetScale(glm::vec3(2.0f, 2.0f, 2.0f));
+
+// Apply relative transform (adds to current values)
+node->Translate(glm::vec3(0.1f, 0.0f, 0.0f));  // Move right
+node->Rotate(glm::vec3(0.0f, 1.0f, 0.0f));     // Rotate Y axis
+node->Scale(glm::vec3(1.1f, 1.1f, 1.1f));      // Scale up 10%
+
+// Get current transform
+glm::vec3 pos = node->GetPosition();
+glm::vec3 rot = node->GetRotation();
+glm::vec3 scale = node->GetScale();
+
+
+RENDERING THE SCENE:
+--------------------
+
+// Loop through all root nodes
+for (auto& rootNode : scene.GetRootNodes()) {
+    // Get the world transform
+    glm::mat4 worldTransform = rootNode->GetWorldTransform();
+
+    // Render all child meshes
+    for (auto& meshNode : rootNode->GetChildMeshes()) {
+        // Combine world + local transforms
+        glm::mat4 finalTransform = worldTransform * meshNode.GetLocalTransform();
+
+        // Send to shader and draw
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(finalTransform));
+        meshNode.mesh->Draw();
+    }
+}
+
+
+ADVANCED: HIERARCHICAL NODES (Child Nodes)
+-------------------------------------------
+
+You can create nested hierarchies where nodes have child nodes:
+
+auto parent = scene.AddRootNode(glm::vec3(0.0f, 0.0f, 0.0f));
+auto child = std::make_shared<SceneNode>(glm::vec3(2.0f, 0.0f, 0.0f));
+
+parent->AddChildNode(child);
+child->AddChildMesh(&someMesh);
+
+// Moving the parent will move the child and its meshes!
+
+
+PRACTICAL EXAMPLE: SOLAR SYSTEM
+--------------------------------
+
+// Sun at center
+auto sun = scene.AddRootNode(glm::vec3(0.0f, 0.0f, 0.0f));
+sun->AddChildMesh(&sphereMesh, glm::vec3(0.0f, 0.0f, 0.0f),
+                  glm::vec3(0.0f), glm::vec3(3.0f, 3.0f, 3.0f));
+
+// Earth orbiting sun
+auto earth = scene.AddRootNode(glm::vec3(10.0f, 0.0f, 0.0f));
+earth->AddChildMesh(&sphereMesh, glm::vec3(0.0f, 0.0f, 0.0f));
+
+// In update loop: rotate earth around origin (orbit)
+earth->SetPosition(glm::vec3(
+    cos(time) * 10.0f,
+    0.0f,
+    sin(time) * 10.0f
+));
+
+
+MEMORY MANAGEMENT:
+------------------
+
+IMPORTANT: Meshes must remain in scope!
+✓ CORRECT:
+    Mesh cube = factory.CreateCube();
+    node->AddChildMesh(&cube);  // cube stays in scope
+
+✗ WRONG:
+    node->AddChildMesh(&factory.CreateCube());  // temporary destroyed!
+
+
+MANAGING THE SCENE:
+-------------------
+
+// Get number of root nodes
+size_t count = scene.GetRootNodeCount();
+
+// Remove a root node by index
+scene.RemoveRootNode(0);
+
+// Clear entire scene
+scene.Clear();
+
+// Remove a mesh from a node
+node->RemoveChildMesh(0);
+
+
+OPENGL TEXTURE FUNCTIONS EXPLAINED:
+------------------------------------
+
+glActiveTexture(GL_TEXTURE0):
+  - Selects which texture unit to work with (GPU has multiple slots)
+  - GL_TEXTURE0 is the first slot, GL_TEXTURE1 is second, etc.
+  - Most GPUs support 16-80+ texture units
+
+glBindTexture(GL_TEXTURE_2D, textureID):
+  - Binds a texture to the currently active texture unit
+  - Makes that texture available for rendering
+
+Example with multiple textures:
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, texture1);
+  glUniform1i(glGetUniformLocation(shader.ID, "texture1"), 0);
+
+  glActiveTexture(GL_TEXTURE1);
+  glBindTexture(GL_TEXTURE_2D, texture2);
+  glUniform1i(glGetUniformLocation(shader.ID, "texture2"), 1);
+

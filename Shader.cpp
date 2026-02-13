@@ -4,6 +4,8 @@
 
 #include "Shader.h"
 
+#include <glm/gtc/type_ptr.hpp>
+
 Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 
     // 1. Retreieve the vertex/fragment source code
@@ -90,4 +92,12 @@ void Shader::setInt(const std::string &name, int value) const {
 }
 void Shader::setFloat(const std::string &name, float value) const {
     glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
+}
+
+void Shader::setMat4(const std::string &name, const glm::mat4 &mat) const {
+    // 1. Find the location of the uniform in the shader
+    // 2. 1 = sending one matrix
+    // 3. GL_FALSE = do not transpose (GLM matrices are already column-major)
+    // 4. glm::value_ptr = gets the raw float array from the GLM matrix object
+    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
 }
