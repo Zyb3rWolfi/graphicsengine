@@ -8,6 +8,9 @@ void Renderer::Draw(Scenemap& scene, Shader& shader, Camera& camera) {
     shader.use();// Use the shader program
 
     shader.setMat4("view", camera.GetViewMatrix());
+    shader.setVec3("lightPos", camera.position);
+    shader.setVec3("viewPos", camera.position);
+
 
     for (auto& rootNode : scene.GetRootNodes()) {
         RenderNode(rootNode, glm::mat4(1.0f), shader);
@@ -28,10 +31,20 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
         // 3 - Set the final transform in the shader and draw the mesh
         shader.setMat4("model", finalTransform);
 
+        shader.setVec3("objectColor", meshNode.mesh->objectColor);
+        shader.setVec3("lightColor", meshNode.mesh->lightColor);
+        shader.setVec3("Material.ambient", meshNode.mesh->ambient);
+        shader.setVec3("Material.diffuse", meshNode.mesh->diffuse);
+        shader.setVec3("Material.specular", meshNode.mesh->specular);
+        shader.setFloat("Material.shininess", meshNode.mesh->shininess);
+
         if (meshNode.texture != nullptr) {
+            shader.setBool("useTexture", true);
             glActiveTexture(GL_TEXTURE0);
             glBindTexture(GL_TEXTURE_2D, meshNode.texture->texture); // Access your ID
             shader.setInt("ourTexture", 0);
+        } else {
+            shader.setBool("useTexture", false);
         }
 
         meshNode.mesh->Draw();

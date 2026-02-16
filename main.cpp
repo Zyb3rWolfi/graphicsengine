@@ -67,11 +67,20 @@ int main() {
     }
 
     Shader shader = Shader("Shaders/shader.vert", "Shaders/shader.frag");
-
+    Shader shader2 = Shader("Shaders/sourceShader.vert", "Shaders/sourceShader.frag");
     // Create meshes (they need to persist in memory)
     Mesh cube1 = factory.CreateCube();
     Mesh cube2 = factory.CreateCube();
     Mesh cube3 = factory.CreateCube();
+    //cube1.objectColor = glm::vec3(0.3f, 0.3f, 0.3f);
+    cube1.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+    cube2.objectColor = glm::vec3(0.0f, 1.0f, 0.0f);
+    cube2.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+
+    cube1.shininess = 32.0f;
+    cube1.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
+    cube1.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);
+    cube1.specular = glm::vec3(1.0f, 1.0f, 1.0f);
 
     // Create the scene
     Scenemap scene;
