@@ -11,10 +11,10 @@
 
 class Renderer {
 public:
-    void Draw(Scenemap& scene, Shader& shader, Camera& camera);
+    void Draw(Scenemap& scene, Camera& camera, glm::vec3 lightPos);
 private:
     // Recursive function to handle the parent-child math
-    void RenderNode(const std::shared_ptr<SceneNode>& node, const glm::mat4& parentTransform, Shader& shader);
+    void RenderNode(const std::shared_ptr<SceneNode>& node, const glm::mat4& parentTransform, Camera& camera, glm::vec3 lightPos);
 };
 
 

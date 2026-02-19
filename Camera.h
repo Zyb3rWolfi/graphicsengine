@@ -36,6 +36,10 @@ public:
     // Returns the view matrix calculated using Euler Angles and the LookAt Matrix
     glm::mat4 GetViewMatrix();
 
+    // Projection matrix methods
+    void SetProjectionMatrix(const glm::mat4& projection);
+    glm::mat4 GetProjectionMatrix() const;
+
     // Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
     void ProcessKeyboard(Camera_Movement direction, float deltaTime);
 
@@ -45,6 +49,9 @@ public:
 private:
     // Calculates the front vector from the Camera's (updated) Euler Angles
     void updateCameraVectors();
+
+    // Projection matrix
+    glm::mat4 projectionMatrix;
 
 };
 

@@ -4,13 +4,13 @@
 
 #ifndef GRAPHICSENGINE_SCENEMAP_H
 #define GRAPHICSENGINE_SCENEMAP_H
-
 #include "Mesh.h"
 #include <vector>
 #include <memory>
 #include <glm/glm.hpp>
 
 #include "Texture.h"
+#include "Shader.h"
 
 // Forward declarations
 class SceneNode;
@@ -19,11 +19,13 @@ class SceneNode;
 struct MeshNode {
     Texture* texture;                       // Texture for the mesh
     Mesh* mesh;                          // Pointer to the mesh
+    Shader* shader;
+    Texture* SpecularTexture;                // Specular map for the mesh (optional)
     glm::vec3 localPosition;             // Position relative to parent
     glm::vec3 localRotation;             // Rotation in degrees (x, y, z)
     glm::vec3 localScale;                // Scale relative to parent
 
-    MeshNode(Mesh* m, Texture* t = nullptr, glm::vec3 pos = glm::vec3(0.0f),
+    MeshNode(Mesh* m, Texture* t = nullptr,Texture* st = nullptr, Shader* s = nullptr, glm::vec3 pos = glm::vec3(0.0f),
              glm::vec3 rot = glm::vec3(0.0f), glm::vec3 scale = glm::vec3(1.0f));
 
     // Get the local transform matrix
@@ -48,7 +50,8 @@ public:
     [[nodiscard]] glm::mat4 GetWorldTransform() const;
 
     // Add a child mesh with local transform
-    void AddChildMesh(Mesh* mesh,Texture* texture = nullptr, glm::vec3 localPos = glm::vec3(0.0f),
+    void AddChildMesh(Mesh* mesh, Texture* texture = nullptr,Texture* specularTexture = nullptr, Shader* shader = nullptr,
+                      glm::vec3 localPos = glm::vec3(0.0f),
                       glm::vec3 localRot = glm::vec3(0.0f),
                       glm::vec3 localScale = glm::vec3(1.0f));
 

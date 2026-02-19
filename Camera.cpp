@@ -61,3 +61,11 @@ void Camera::updateCameraVectors() {
     right = glm::normalize(glm::cross(this->front, worldUp));  // Normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
     up    = glm::normalize(glm::cross(right, this->front));
 }
+
+void Camera::SetProjectionMatrix(const glm::mat4& projection) {
+    projectionMatrix = projection;
+}
+
+glm::mat4 Camera::GetProjectionMatrix() const {
+    return projectionMatrix;
+}

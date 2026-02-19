@@ -76,24 +76,41 @@ int main() {
     cube1.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
     cube2.objectColor = glm::vec3(0.0f, 1.0f, 0.0f);
     cube2.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+    cube2.shininess = 32.0f;
+    cube2.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
+    cube2.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);
+    cube2.specular = glm::vec3(1.0f, 1.0f, 1.0f);
 
     cube1.shininess = 32.0f;
     cube1.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
     cube1.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);
     cube1.specular = glm::vec3(1.0f, 1.0f, 1.0f);
 
+    // Cube 3 is a light source, so it has a different shader and no texture
+    cube3.objectColor = glm::vec3(1.0f, 1.0f, 1.0f);
+    cube3.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+    cube3.shininess = 32.0f;
+    cube3.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
+    cube3.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);
+    cube3.specular = glm::vec3(1.0f, 1.0f, 1.0f);
+
+
     // Create the scene
     Scenemap scene;
     Texture text = Texture("Images/container.jpg");
-    Texture text2 = Texture("Images/log.jpg");
+    Texture text2 = Texture("Images/container2.png");
+    Texture specularMap = Texture("Images/container2_specular.png");
+
     // Create a root node at world position (0, 0, 0)
     auto rootNode1 = scene.AddRootNode(glm::vec3(0.0f, 0.0f, 0.0f));
     // Add child meshes with local transforms relative to the root node
-    rootNode1->AddChildMesh(&cube1, &text, glm::vec3(0.0f, 0.0f, 0.0f));
-    rootNode1->AddChildMesh(&cube2, &text2, glm::vec3(2.0f, 0.0f, 0.0f));
+    // cube1 uses shader (the main shader), cube2 uses shader2 (sourceShader)
+    rootNode1->AddChildMesh(&cube2, &text2, &specularMap, &shader, glm::vec3(2.0f, 0.0f, 0.0f));
+    rootNode1->AddChildMesh(&cube3, nullptr,nullptr, &shader2, glm::vec3(-2.0f, 1.0f, -1.0f));
 
 
     while (!glfwWindowShouldClose(window)) {
+        glm::vec3 lightPos = glm::vec3(-2.0f, 1.0f, -1.0f);
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
@@ -107,23 +124,10 @@ int main() {
 
         glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 50.0f);
+        camera.SetProjectionMatrix(projection);
 
-        shader.use();
-
-        // Set view and projection (same for all objects)
-        int viewLoc = glGetUniformLocation(shader.ID, "view");
-        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-        int projectionLoc = glGetUniformLocation(shader.ID, "projection");
-        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
-
-        // Bind texture
-        glActiveTexture(GL_TEXTURE0);
-        glUniform1i(glGetUniformLocation(shader.ID, "ourTexture"), 0);
-
-        // Render all root nodes and their children
-        int modelLoc = glGetUniformLocation(shader.ID, "model");
-
-        renderer.Draw(scene, shader, camera);
+        // Render all root nodes and their children (each mesh uses its own shader)
+        renderer.Draw(scene, camera, lightPos);
 
         // Double buffering so no screen tearing
         glfwSwapBuffers(window);
