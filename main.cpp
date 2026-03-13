@@ -7,6 +7,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Camera.h"
+#include "Light.h"
 #include "Mesh.h"
 #include "Renderer.h"
 #include "Scenemap.h"
@@ -34,6 +35,11 @@ float lastFrame = 0.0f;
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
+
+std::vector<Light> lights = {
+    Light(glm::vec3(-2.0f, 1.0f, -1.0f), glm::vec3(0.05f), glm::vec3(0.8f), glm::vec3(1.0f)),
+    Light(glm::vec3(4.0f, 1.0f, -1.0f), glm::vec3(0.05f), glm::vec3(0.8f), glm::vec3(1.0f))
+};
 
 void mouse_callback(GLFWwindow * window, double xpos, double ypos);
 
@@ -74,6 +80,7 @@ int main() {
     Mesh cube3 = factory.CreateCube();
     //cube1.objectColor = glm::vec3(0.3f, 0.3f, 0.3f);
     cube1.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+
     cube2.objectColor = glm::vec3(0.0f, 1.0f, 0.0f);
     cube2.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
     cube2.shininess = 32.0f;
@@ -100,13 +107,15 @@ int main() {
     Texture text = Texture("Images/container.jpg");
     Texture text2 = Texture("Images/container2.png");
     Texture specularMap = Texture("Images/container2_specular.png");
+    Texture emissionMap = Texture("Images/Box/emission.jpg");
 
     // Create a root node at world position (0, 0, 0)
     auto rootNode1 = scene.AddRootNode(glm::vec3(0.0f, 0.0f, 0.0f));
     // Add child meshes with local transforms relative to the root node
     // cube1 uses shader (the main shader), cube2 uses shader2 (sourceShader)
-    rootNode1->AddChildMesh(&cube2, &text2, &specularMap, &shader, glm::vec3(2.0f, 0.0f, 0.0f));
-    rootNode1->AddChildMesh(&cube3, nullptr,nullptr, &shader2, glm::vec3(-2.0f, 1.0f, -1.0f));
+    rootNode1->AddChildMesh(&cube2, &text2, &specularMap, nullptr,&shader, glm::vec3(2.0f, 0.0f, 0.0f));
+    rootNode1->AddChildMesh(&cube3, nullptr,nullptr,nullptr ,&shader2, glm::vec3(-2.0f, 1.0f, -1.0f));
+    rootNode1->AddChildMesh(&cube3, nullptr,nullptr,nullptr ,&shader2, glm::vec3(4.0f, 1.0f, -1.0f));
 
 
     while (!glfwWindowShouldClose(window)) {
@@ -127,7 +136,7 @@ int main() {
         camera.SetProjectionMatrix(projection);
 
         // Render all root nodes and their children (each mesh uses its own shader)
-        renderer.Draw(scene, camera, lightPos);
+        renderer.Draw(scene, camera, lights);
 
         // Double buffering so no screen tearing
         glfwSwapBuffers(window);

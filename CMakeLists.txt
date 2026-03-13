@@ -20,6 +20,7 @@ add_executable(graphicsengine main.cpp
         Scenemap.h
         Renderer.cpp
         Renderer.h
+        Light.h
 )
 find_package(glfw3 CONFIG REQUIRED)
 target_link_libraries(graphicsengine PRIVATE glfw)

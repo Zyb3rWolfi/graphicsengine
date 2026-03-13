@@ -18,6 +18,7 @@ class SceneNode;
 // Represents a mesh with its local transform relative to parent
 struct MeshNode {
     Texture* texture;                       // Texture for the mesh
+    Texture* EmissionTexture;                // Emission map for the mesh (optional)
     Mesh* mesh;                          // Pointer to the mesh
     Shader* shader;
     Texture* SpecularTexture;                // Specular map for the mesh (optional)
@@ -25,7 +26,7 @@ struct MeshNode {
     glm::vec3 localRotation;             // Rotation in degrees (x, y, z)
     glm::vec3 localScale;                // Scale relative to parent
 
-    MeshNode(Mesh* m, Texture* t = nullptr,Texture* st = nullptr, Shader* s = nullptr, glm::vec3 pos = glm::vec3(0.0f),
+    MeshNode(Mesh* m, Texture* t = nullptr,Texture* st = nullptr,Texture* et = nullptr, Shader* s = nullptr, glm::vec3 pos = glm::vec3(0.0f),
              glm::vec3 rot = glm::vec3(0.0f), glm::vec3 scale = glm::vec3(1.0f));
 
     // Get the local transform matrix
@@ -50,7 +51,7 @@ public:
     [[nodiscard]] glm::mat4 GetWorldTransform() const;
 
     // Add a child mesh with local transform
-    void AddChildMesh(Mesh* mesh, Texture* texture = nullptr,Texture* specularTexture = nullptr, Shader* shader = nullptr,
+    void AddChildMesh(Mesh* mesh, Texture* texture = nullptr,Texture* specularTexture = nullptr,Texture* EmissionTexture = nullptr, Shader* shader = nullptr,
                       glm::vec3 localPos = glm::vec3(0.0f),
                       glm::vec3 localRot = glm::vec3(0.0f),
                       glm::vec3 localScale = glm::vec3(1.0f));

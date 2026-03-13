@@ -1,4 +1,5 @@
 #version 330 core
+#define MAX_LIGHTS 8
 out vec4 FragColor;
 
 in vec3 ourColor;
@@ -10,13 +11,14 @@ uniform sampler2D ourTexture;
 uniform vec3 objectColor;
 uniform vec3 viewPos;
 uniform bool useTexture;
+uniform int numLights;
 
 struct Light {
     vec3 position;
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
-}; uniform Light light;
+}; uniform Light lights[MAX_LIGHTS];
 
 uniform struct Material {
     vec3 ambient;
@@ -25,33 +27,35 @@ uniform struct Material {
     float shininess;
 } material;
 
+
 void main()
 {
+    vec3 albedo = useTexture ? texture(material.diffuse, TexCoord).rgb : objectColor;
+
     float ambientStrength = 0.1;
     float specularStrength = 0.5;
 
-    // Ambient
-    vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoord));
-
     // Diffuse
     vec3 norm = normalize(Normal);
-    vec3 lightDir = normalize(light.position - FragPos);
-    float diff = max(dot(norm, lightDir), 0.0);
-    vec3 diffuse = light.diffuse * vec3(texture(material.diffuse, TexCoord)) * diff;
+    vec3 result = vec3(0.0);
 
-    // Specular
-    vec3 viewDir  = normalize(viewPos - FragPos);
-    vec3 reflectDir = reflect(-lightDir, norm);
-    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-    vec3 specular = light.specular * spec * vec3(texture(material.specular, TexCoord));
-    // Get base color from texture or object color
-    vec3 baseColor;
+    for (int i = 0; i < numLights; i++) {
+        vec3 lightDir = normalize(lights[i].position - FragPos);
+        vec3 viewDir  = normalize(viewPos - FragPos);
+        vec3 reflectDir = reflect(-lightDir, norm);
 
-    if (useTexture) {
-        baseColor = texture(ourTexture, TexCoord).rgb;
-    } else {
-        baseColor = objectColor;
+        // Ambient
+        vec3 ambient = lights[i].ambient * albedo;
+        float diff = max(dot(norm, lightDir), 0.0);
+        vec3 diffuse = lights[i].diffuse * diff * albedo;
+
+        float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+        vec3 specMap = texture(material.specular, TexCoord).rgb;
+        vec3 specular = lights[i].specular * spec * specMap;
+
+        // Get base color from texture or object color
+        result += ambient + diffuse + specular;
     }
 
-    vec3 result = (ambient + diffuse + specular) * baseColor;
-    FragColor = vec4(ambient + diffuse + specular, 1.0);   }
+    FragColor = vec4(result, 1.0);
+}
