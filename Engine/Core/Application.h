@@ -24,7 +24,7 @@ public:
     static void MouseCallback(GLFWwindow* window, double xpos, double ypos);
 
 private:
-    void ProcessInput();
+    void ProcessInput(float dt);
     void Update(float dt);
     void Render();
 

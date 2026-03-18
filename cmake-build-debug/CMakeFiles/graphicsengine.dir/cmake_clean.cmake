@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphicsengine.dir/Engine/Scene/Camera.cpp.obj.d"
   "CMakeFiles/graphicsengine.dir/Engine/Scene/Scenemap.cpp.obj"
   "CMakeFiles/graphicsengine.dir/Engine/Scene/Scenemap.cpp.obj.d"
+  "CMakeFiles/graphicsengine.dir/Engine/Utility/EngineTime.cpp.obj"
+  "CMakeFiles/graphicsengine.dir/Engine/Utility/EngineTime.cpp.obj.d"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.obj"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.obj.d"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.obj"

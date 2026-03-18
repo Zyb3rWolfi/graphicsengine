@@ -310,6 +310,30 @@ Engine\Scene\Scenemap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.s
 .PHONY : Engine\Scene\Scenemap.cpp.s
 
+Engine\Utility\EngineTime.obj: Engine\Utility\EngineTime.cpp.obj
+.PHONY : Engine\Utility\EngineTime.obj
+
+# target to build an object file
+Engine\Utility\EngineTime.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj
+.PHONY : Engine\Utility\EngineTime.cpp.obj
+
+Engine\Utility\EngineTime.i: Engine\Utility\EngineTime.cpp.i
+.PHONY : Engine\Utility\EngineTime.i
+
+# target to preprocess a source file
+Engine\Utility\EngineTime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.i
+.PHONY : Engine\Utility\EngineTime.cpp.i
+
+Engine\Utility\EngineTime.s: Engine\Utility\EngineTime.cpp.s
+.PHONY : Engine\Utility\EngineTime.s
+
+# target to generate assembly for a file
+Engine\Utility\EngineTime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.s
+.PHONY : Engine\Utility\EngineTime.cpp.s
+
 Engine\Utility\Input.obj: Engine\Utility\Input.cpp.obj
 .PHONY : Engine\Utility\Input.obj
 
@@ -439,6 +463,9 @@ help:
 	@echo ... Engine/Scene/Scenemap.obj
 	@echo ... Engine/Scene/Scenemap.i
 	@echo ... Engine/Scene/Scenemap.s
+	@echo ... Engine/Utility/EngineTime.obj
+	@echo ... Engine/Utility/EngineTime.i
+	@echo ... Engine/Utility/EngineTime.s
 	@echo ... Engine/Utility/Input.obj
 	@echo ... Engine/Utility/Input.i
 	@echo ... Engine/Utility/Input.s

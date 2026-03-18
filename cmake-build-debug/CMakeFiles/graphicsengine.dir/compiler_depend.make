@@ -313,6 +313,7 @@ CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: "C:\Program Files
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Scene\..\Renderer\Texture.h
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Renderer\..\Scene\Light.h
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Utility\Input.h
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Core\..\Utility\EngineTime.h
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\vcpkg\installed\x64-windows\include\stb_image.h
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Core\..\Utility\ShapeFactory.h
 
@@ -1976,6 +1977,21 @@ CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj: F:\vcpkg\installed\
 CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\gtc\matrix_transform.inl
 
 
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: F:\graphicsengine\Engine\Utility\EngineTime.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: F:\graphicsengine\Engine\Utility\EngineTime.h
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: F:\vcpkg\installed\x64-windows\include\GLFW\glfw3.h
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stddef.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\sal.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\concurrencysal.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vadefs.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\stdint.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um\GL\gl.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared\winapifamily.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared\winpackagefamily.h"
+
+
 CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\graphicsengine\Engine\Utility\Input.cpp
 CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\graphicsengine\Engine\Utility\Input.h
 CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\GLFW\glfw3.h
@@ -3126,6 +3142,8 @@ F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double4x2_precision.hpp:
 
 "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\use_ansi.h":
 
+F:\graphicsengine\Engine\Utility\EngineTime.h:
+
 F:\graphicsengine\Engine\Core\..\Renderer\Renderer.h:
 
 "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\type_traits":
@@ -3342,6 +3360,8 @@ F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x3.hpp:
 
 F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat2x3.hpp:
 
+F:\graphicsengine\Engine\Utility\EngineTime.cpp:
+
 F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat2x3.inl:
 
 F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x3_precision.hpp:
@@ -3543,6 +3563,8 @@ F:\graphicsengine\Engine\Scene\..\Renderer\Texture.h:
 F:\graphicsengine\Engine\Renderer\..\Scene\Light.h:
 
 F:\graphicsengine\Engine\Utility\Input.h:
+
+F:\graphicsengine\Engine\Core\..\Utility\EngineTime.h:
 
 F:\vcpkg\installed\x64-windows\include\glm\gtc\..\ext\quaternion_common.hpp:
 

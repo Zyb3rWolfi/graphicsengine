@@ -2,11 +2,12 @@
 #include <iostream>
 
 #include "Input.h"
+#include "../Utility/EngineTime.h"
 #include "stb_image.h"
 #include "../Utility/ShapeFactory.h"
 #include "../Renderer/Shader.h"  // Add this
 #include "../Renderer/Mesh.h"    // Add this
-#include "../Renderer/Texture.h" /
+#include "../Renderer/Texture.h"
 
 Application::Application(unsigned int width, unsigned int height)
     : screenWidth(width), screenHeight(height), camera(glm::vec3(0.0f, 0.0f, 3.0f)) {
@@ -14,7 +15,6 @@ Application::Application(unsigned int width, unsigned int height)
     // Setup lights from your main.cpp
     lights = {
         Light(glm::vec3(-2.0f, 1.0f, -1.0f)),
-        Light(glm::vec3(4.0f, 1.0f, -1.0f))
     };
 }
 
@@ -52,6 +52,9 @@ bool Application::Init() {
 }
 
 void Application::Run() {
+    EngineTime::Update();
+    float dt = EngineTime::GetDeltaTime();
+
     ShapeFactory factory;
     // Loading resources moved from your main.cpp
     Shader shader("Shaders/shader.vert", "Shaders/shader.frag");
@@ -75,12 +78,9 @@ void Application::Run() {
     root->AddChildMesh(&cubeLight, nullptr, nullptr, nullptr, &shader2, glm::vec3(-2.0f, 1.0f, -1.0f));
 
     while (!glfwWindowShouldClose(window)) {
-        float currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;
 
-        ProcessInput();
-        Update(deltaTime);
+        ProcessInput(dt);
+        Update(dt);
         Render();
 
         glfwSwapBuffers(window);
@@ -88,7 +88,7 @@ void Application::Run() {
     }
 }
 
-void Application::ProcessInput() {
+void Application::ProcessInput(float dt) {
 
     // Keeping movement simple as requested
 
@@ -97,16 +97,16 @@ void Application::ProcessInput() {
     }
 
     if (Input::IsActionActive("MoveForward")) {
-        camera.ProcessKeyboard(FORWARD, deltaTime);
+        camera.ProcessKeyboard(FORWARD, dt);
     }
     if (Input::IsActionActive("MoveLeft")) {
-        camera.ProcessKeyboard(LEFT, deltaTime);
+        camera.ProcessKeyboard(LEFT, dt);
     }
     if (Input::IsActionActive("MoveRight")) {
-        camera.ProcessKeyboard(RIGHT, deltaTime);
+        camera.ProcessKeyboard(RIGHT, dt);
     }
     if (Input::IsActionActive("MoveBack")) {
-        camera.ProcessKeyboard(BACKWARD, deltaTime);
+        camera.ProcessKeyboard(BACKWARD, dt);
     }
 
 }

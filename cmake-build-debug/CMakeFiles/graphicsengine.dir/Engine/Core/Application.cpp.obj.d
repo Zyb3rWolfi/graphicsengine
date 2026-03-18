@@ -309,5 +309,6 @@ C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/
 F:/graphicsengine/Engine/Scene/../Renderer/Texture.h
 F:/graphicsengine/Engine/Renderer/../Scene/Light.h
 F:/graphicsengine/Engine/Utility/Input.h
+F:/graphicsengine/Engine/Core/../Utility/EngineTime.h
 F:/vcpkg/installed/x64-windows/include/stb_image.h
 F:/graphicsengine/Engine/Core/../Utility/ShapeFactory.h

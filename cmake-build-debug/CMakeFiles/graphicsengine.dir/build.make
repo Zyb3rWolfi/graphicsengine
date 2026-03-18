@@ -298,6 +298,26 @@ CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.s /c F:\graphicsengine\Engine\Utility\Input.cpp
 <<
 
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: F:\graphicsengine\Engine\Utility\EngineTime.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Utility/EngineTime.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Utility\EngineTime.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Utility/EngineTime.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Utility\EngineTime.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Utility/EngineTime.cpp.s"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.s /c F:\graphicsengine\Engine\Utility\EngineTime.cpp
+<<
+
 # Object files for target graphicsengine
 graphicsengine_OBJECTS = \
 "CMakeFiles\graphicsengine.dir\main.cpp.obj" \
@@ -311,7 +331,8 @@ graphicsengine_OBJECTS = \
 "CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj" \
 "CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj" \
 "CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj" \
-"CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj"
+"CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj" \
+"CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj"
 
 # External object files for target graphicsengine
 graphicsengine_EXTERNAL_OBJECTS =
@@ -328,12 +349,13 @@ graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\build.make
 graphicsengine.exe: F:\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib
 graphicsengine.exe: F:\vcpkg\installed\x64-windows\debug\lib\glad.lib
 graphicsengine.exe: F:\vcpkg\installed\x64-windows\debug\lib\glm.lib
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable graphicsengine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable graphicsengine.exe"
 	"F:\Jetbrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\graphicsengine.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\graphicsengine.dir\objects1.rsp @<<
  /out:graphicsengine.exe /implib:graphicsengine.lib /pdb:F:\graphicsengine\cmake-build-debug\graphicsengine.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  F:\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib F:\vcpkg\installed\x64-windows\debug\lib\glad.lib F:\vcpkg\installed\x64-windows\debug\lib\glm.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

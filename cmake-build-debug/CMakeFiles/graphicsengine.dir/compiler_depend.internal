@@ -314,6 +314,7 @@ CMakeFiles/graphicsengine.dir/Engine/Core/Application.cpp.obj
  F:/graphicsengine/Engine/Scene/../Renderer/Texture.h
  F:/graphicsengine/Engine/Renderer/../Scene/Light.h
  F:/graphicsengine/Engine/Utility/Input.h
+ F:/graphicsengine/Engine/Core/../Utility/EngineTime.h
  F:/vcpkg/installed/x64-windows/include/stb_image.h
  F:/graphicsengine/Engine/Core/../Utility/ShapeFactory.h
 
@@ -1975,6 +1976,21 @@ CMakeFiles/graphicsengine.dir/Engine/Scene/Scenemap.cpp.obj
  F:/vcpkg/installed/x64-windows/include/glm/gtc/../ext/matrix_transform.hpp
  F:/vcpkg/installed/x64-windows/include/glm/ext/matrix_transform.inl
  F:/vcpkg/installed/x64-windows/include/glm/gtc/matrix_transform.inl
+
+CMakeFiles/graphicsengine.dir/Engine/Utility/EngineTime.cpp.obj
+ F:/graphicsengine/Engine/Utility/EngineTime.cpp
+ F:/graphicsengine/Engine/Utility/EngineTime.h
+ F:/vcpkg/installed/x64-windows/include/GLFW/glfw3.h
+ C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/ucrt/stddef.h
+ C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/ucrt/corecrt.h
+ C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/vcruntime.h
+ C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/sal.h
+ C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/concurrencysal.h
+ C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/vadefs.h
+ C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/stdint.h
+ C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/um/GL/gl.h
+ C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/shared/winapifamily.h
+ C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/shared/winpackagefamily.h
 
 CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.obj
  F:/graphicsengine/Engine/Utility/Input.cpp

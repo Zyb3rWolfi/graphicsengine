@@ -28,6 +28,9 @@ add_executable(graphicsengine
         Engine/Utility/stb_impl.cpp
         Engine/Utility/Input.cpp
         Engine/Utility/Input.h
+        Engine/Utility/EngineTime.cpp
+        Engine/Utility/EngineTime.h
+        Engine/Utility/EngineTime.cpp
 
 )
 
