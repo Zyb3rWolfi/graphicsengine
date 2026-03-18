@@ -74,7 +74,7 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
                 glBindTexture(GL_TEXTURE_2D, meshNode.EmissionTexture->texture); // Access your ID
                 shader->setInt("material.emission", 2);
             } else {
-                shader->setInt("material.emission", 0); // No emission map
+                shader->setInt("material.emission", 10); // No emission map
             }
             shader->setInt("ourTexture", 0);
         } else {

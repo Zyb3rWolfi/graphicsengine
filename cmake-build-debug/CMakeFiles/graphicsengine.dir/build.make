@@ -78,30 +78,70 @@ CMakeFiles\graphicsengine.dir\main.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\main.cpp.s /c F:\graphicsengine\main.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
-CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj: F:\graphicsengine\Engine\Renderer\vertex.cpp
-CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/vertex.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\vertex.cpp
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Core\Application.cpp
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Core/Application.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Core\Application.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Renderer/vertex.cpp.i"
-	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Renderer\vertex.cpp
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Core/Application.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Core\Application.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Renderer/vertex.cpp.s"
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Core/Application.cpp.s"
 	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.s /c F:\graphicsengine\Engine\Renderer\vertex.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.s /c F:\graphicsengine\Engine\Core\Application.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj: F:\graphicsengine\Engine\Renderer\Renderer.cpp
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Renderer.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\Renderer.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Renderer/Renderer.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Renderer\Renderer.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Renderer/Renderer.cpp.s"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.s /c F:\graphicsengine\Engine\Renderer\Renderer.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj: F:\graphicsengine\Engine\Renderer\Mesh.cpp
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Mesh.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\Mesh.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Renderer/Mesh.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Renderer\Mesh.cpp
+<<
+
+CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Renderer/Mesh.cpp.s"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.s /c F:\graphicsengine\Engine\Renderer\Mesh.cpp
 <<
 
 CMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
 CMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.obj: F:\graphicsengine\Engine\Renderer\Shader.cpp
 CMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Shader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Shader.cpp.obj"
 	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\Shader.cpp
 <<
@@ -121,7 +161,7 @@ CMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.s: cmake_force
 CMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
 CMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.obj: F:\graphicsengine\Engine\Renderer\Texture.cpp
 CMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Texture.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Texture.cpp.obj"
 	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\Texture.cpp
 <<
@@ -138,50 +178,30 @@ CMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.s /c F:\graphicsengine\Engine\Renderer\Texture.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj: F:\graphicsengine\Engine\Renderer\Mesh.cpp
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Mesh.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\Mesh.cpp
+CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj: F:\graphicsengine\Engine\Renderer\vertex.cpp
+CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/vertex.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\vertex.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Renderer/Mesh.cpp.i"
-	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Renderer\Mesh.cpp
+CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Renderer/vertex.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Renderer\vertex.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Renderer/Mesh.cpp.s"
+CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Renderer/vertex.cpp.s"
 	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.s /c F:\graphicsengine\Engine\Renderer\Mesh.cpp
-<<
-
-CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
-CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
-CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
-<<
-
-CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.i"
-	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
-<<
-
-CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.s"
-	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.s /c F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.s /c F:\graphicsengine\Engine\Renderer\vertex.cpp
 <<
 
 CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
 CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.obj: F:\graphicsengine\Engine\Scene\Camera.cpp
 CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Scene/Camera.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Scene/Camera.cpp.obj"
 	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Scene\Camera.cpp
 <<
@@ -201,7 +221,7 @@ CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.s: cmake_force
 CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
 CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj: F:\graphicsengine\Engine\Scene\Scenemap.cpp
 CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Scene/Scenemap.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Scene/Scenemap.cpp.obj"
 	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Scene\Scenemap.cpp
 <<
@@ -218,100 +238,102 @@ CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.s /c F:\graphicsengine\Engine\Scene\Scenemap.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj: F:\graphicsengine\Engine\Renderer\Renderer.cpp
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Renderer/Renderer.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Renderer\Renderer.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Renderer/Renderer.cpp.i"
-	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Renderer\Renderer.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Renderer/Renderer.cpp.s"
+CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.s"
 	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.s /c F:\graphicsengine\Engine\Renderer\Renderer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.s /c F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
-CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Core\Application.cpp
-CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Core/Application.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Core\Application.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: F:\graphicsengine\Engine\Utility\stb_impl.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Utility/stb_impl.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Utility\stb_impl.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Core/Application.cpp.i"
-	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Core\Application.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Utility/stb_impl.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Utility\stb_impl.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Core/Application.cpp.s"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Utility/stb_impl.cpp.s"
 	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.s /c F:\graphicsengine\Engine\Core\Application.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.s /c F:\graphicsengine\Engine\Utility\stb_impl.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
-CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj: F:\graphicsengine\Engine\Utility\stb_image.cpp
-CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Utility/stb_image.cpp.obj"
-	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Utility\stb_image.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: CMakeFiles\graphicsengine.dir\flags.make
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\graphicsengine\Engine\Utility\Input.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: CMakeFiles\graphicsengine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj.d --working-dir=F:\graphicsengine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj /FdCMakeFiles\graphicsengine.dir\ /FS -c F:\graphicsengine\Engine\Utility\Input.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Utility/stb_image.cpp.i"
-	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Utility\stb_image.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.i"
+	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe > CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\graphicsengine\Engine\Utility\Input.cpp
 <<
 
-CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Utility/stb_image.cpp.s"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.s"
 	C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.s /c F:\graphicsengine\Engine\Utility\stb_image.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.s /c F:\graphicsengine\Engine\Utility\Input.cpp
 <<
 
 # Object files for target graphicsengine
 graphicsengine_OBJECTS = \
 "CMakeFiles\graphicsengine.dir\main.cpp.obj" \
-"CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj" \
+"CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj" \
+"CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj" \
+"CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj" \
 "CMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.obj" \
 "CMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.obj" \
-"CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj" \
-"CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj" \
+"CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj" \
 "CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.obj" \
 "CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj" \
-"CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj" \
-"CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj" \
-"CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj"
+"CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj" \
+"CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj" \
+"CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj"
 
 # External object files for target graphicsengine
 graphicsengine_EXTERNAL_OBJECTS =
 
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\main.cpp.obj
-graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\Shader.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\Texture.cpp.obj
-graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\Mesh.cpp.obj
-graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\vertex.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj
-graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Renderer\Renderer.cpp.obj
-graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj
-graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj
+graphicsengine.exe: CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\build.make
 graphicsengine.exe: F:\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib
 graphicsengine.exe: F:\vcpkg\installed\x64-windows\debug\lib\glad.lib
 graphicsengine.exe: F:\vcpkg\installed\x64-windows\debug\lib\glm.lib
 graphicsengine.exe: CMakeFiles\graphicsengine.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable graphicsengine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=F:\graphicsengine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable graphicsengine.exe"
 	"F:\Jetbrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\graphicsengine.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MIB055~1\18\COMMUN~1\VC\Tools\MSVC\1450~1.357\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\graphicsengine.dir\objects1.rsp @<<
  /out:graphicsengine.exe /implib:graphicsengine.lib /pdb:F:\graphicsengine\cmake-build-debug\graphicsengine.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  F:\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib F:\vcpkg\installed\x64-windows\debug\lib\glad.lib F:\vcpkg\installed\x64-windows\debug\lib\glm.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

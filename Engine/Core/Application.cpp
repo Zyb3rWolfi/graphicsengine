@@ -1,7 +1,12 @@
 #include "Application.h"
 #include <iostream>
 
+#include "Input.h"
+#include "stb_image.h"
 #include "../Utility/ShapeFactory.h"
+#include "../Renderer/Shader.h"  // Add this
+#include "../Renderer/Mesh.h"    // Add this
+#include "../Renderer/Texture.h" /
 
 Application::Application(unsigned int width, unsigned int height)
     : screenWidth(width), screenHeight(height), camera(glm::vec3(0.0f, 0.0f, 3.0f)) {
@@ -20,10 +25,19 @@ bool Application::Init() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+
     window = glfwCreateWindow(screenWidth, screenHeight, "Zyb3r Engine", NULL, NULL);
     if (!window) return false;
+    Input::Initialize(window);
 
     glfwMakeContextCurrent(window);
+
+    Input::MapAction("MoveForward", GLFW_KEY_W);
+    Input::MapAction("MoveForward", GLFW_KEY_UP); // Multiple keys for one action
+    Input::MapAction("MoveLeft",    GLFW_KEY_A);;
+    Input::MapAction("MoveRight",  GLFW_KEY_D);
+    Input::MapAction("MoveBack",    GLFW_KEY_S);
+    Input::MapAction("Quit",        GLFW_KEY_ESCAPE);
 
     // Register this class instance with the window so callbacks can access it
     glfwSetWindowUserPointer(window, this);
@@ -45,6 +59,13 @@ void Application::Run() {
 
     Mesh cubeMain = factory.CreateCube();
     Mesh cubeLight = factory.CreateCube();
+
+    cubeMain.objectColor = glm::vec3(0.0f, 1.0f, 0.0f);
+    cubeMain.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+    cubeMain.shininess = 32.0f;
+    cubeMain.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
+    cubeMain.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);
+    cubeMain.specular = glm::vec3(1.0f, 1.0f, 1.0f);
 
     Texture diff("Images/container2.png");
     Texture spec("Images/container2_specular.png");
@@ -68,14 +89,26 @@ void Application::Run() {
 }
 
 void Application::ProcessInput() {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
 
     // Keeping movement simple as requested
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) camera.ProcessKeyboard(FORWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera.ProcessKeyboard(BACKWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) camera.ProcessKeyboard(LEFT, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) camera.ProcessKeyboard(RIGHT, deltaTime);
+
+    if (Input::IsActionActive("Quit")) {
+        glfwSetWindowShouldClose(window, true);
+    }
+
+    if (Input::IsActionActive("MoveForward")) {
+        camera.ProcessKeyboard(FORWARD, deltaTime);
+    }
+    if (Input::IsActionActive("MoveLeft")) {
+        camera.ProcessKeyboard(LEFT, deltaTime);
+    }
+    if (Input::IsActionActive("MoveRight")) {
+        camera.ProcessKeyboard(RIGHT, deltaTime);
+    }
+    if (Input::IsActionActive("MoveBack")) {
+        camera.ProcessKeyboard(BACKWARD, deltaTime);
+    }
+
 }
 
 void Application::Update(float dt) {

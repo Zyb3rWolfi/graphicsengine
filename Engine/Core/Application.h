@@ -8,6 +8,8 @@
 // Full includes to prevent "incomplete type" errors
 #include "../Renderer/Renderer.h"
 #include "../Scene/Light.h"
+#include "../Scene/Scenemap.h" // Add this
+#include "../Scene/Camera.h"
 
 class Application {
 public:

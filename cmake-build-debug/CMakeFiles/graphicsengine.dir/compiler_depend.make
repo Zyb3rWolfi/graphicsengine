@@ -312,6 +312,8 @@ CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: "C:\Program Files
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\ostream"
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Scene\..\Renderer\Texture.h
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Renderer\..\Scene\Light.h
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Utility\Input.h
+CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\vcpkg\installed\x64-windows\include\stb_image.h
 CMakeFiles\graphicsengine.dir\Engine\Core\Application.cpp.obj: F:\graphicsengine\Engine\Core\..\Utility\ShapeFactory.h
 
 
@@ -1974,6 +1976,267 @@ CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj: F:\vcpkg\installed\
 CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\gtc\matrix_transform.inl
 
 
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\graphicsengine\Engine\Utility\Input.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\graphicsengine\Engine\Utility\Input.h
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\GLFW\glfw3.h
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stddef.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\sal.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\concurrencysal.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vadefs.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\stdint.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um\GL\gl.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared\winapifamily.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared\winpackagefamily.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\glm.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\_fixes.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cmath"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\yvals.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\yvals_core.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xkeycheck.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\crtdbg.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime_new_debug.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime_new.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\crtdefs.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\use_ansi.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cstdlib"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\math.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_math.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stdlib.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_malloc.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_search.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstdlib.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\limits.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xtr1common"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\intrin0.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\intrin0.inl.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\type_traits"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cstddef"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cstdint"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cassert"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\assert.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\..\simd\platform.h
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\climits"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cfloat"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\float.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\limits"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cwchar"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cstdio"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stdio.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstdio.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_stdio_config.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\wchar.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_memcpy_s.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\errno.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime_string.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wconio.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wctype.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wdirect.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wio.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_share.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wprocess.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstring.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wtime.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\sys\stat.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\sys\types.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\intrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\setjmp.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\immintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\wmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\nmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\smmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\tmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\pmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\emmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\mmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\malloc.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\zmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\ammintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cassert"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\assert.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\fwd.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\qualifier.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\vec2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_vec2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_vec2.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\.\compute_vector_relational.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_float2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_float2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_double2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_double2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_int2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_int2_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\ext\scalar_int_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_uint2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_uint2_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\ext\scalar_uint_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\vec3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_vec3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_vec3.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\compute_vector_decl.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\functional"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\exception"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime_exception.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\eh.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_terminate.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\tuple"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\compare"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\concepts"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\__msvc_iter_core.hpp"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\utility"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\initializer_list"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\typeinfo"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime_typeinfo.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xmemory"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\new"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xatomic.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xutility"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cstring"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\string.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_memory.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\unordered_map"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xhash"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\list"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xpolymorphic_allocator.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vector"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\__msvc_bit_utils.hpp"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\__msvc_sanitizer_annotate_container.hpp"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xbit_ops.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xnode_handle.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\_vectorize.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_float3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_float3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_double3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_double3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_int3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_int3_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_uint3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_uint3_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\vec4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_vec4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_vec4.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_float4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_float4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_double4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_double4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_int4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_int4_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_uint4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_uint4_sized.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat2x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat2x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat2x2.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\..\matrix.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat2x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat2x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat2x3.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float2x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float2x3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat2x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat2x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat2x4.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float2x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float2x4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat3x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double3x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat3x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat3x2.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double3x2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float3x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float3x2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat3x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double3x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat3x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat3x3.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\..\common.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\_fixes.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_common.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\..\vector_relational.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_vector_relational.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\compute_common.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_vec1.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_vec1.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double3x3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float3x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float3x3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat3x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double3x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat3x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat3x4.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double3x4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float3x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float3x4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat4x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double4x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat4x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat4x2.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double4x2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float4x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float4x2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat4x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double4x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat4x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat4x3.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double4x3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float4x3.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float4x3_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\mat4x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double4x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_mat4x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_mat4x4.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\..\geometric.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_geometric.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\..\exponential.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_exponential.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cassert"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\assert.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double4x4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float4x4.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float4x4_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_matrix.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_double2x2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float2x2.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\.\ext\matrix_float2x2_precision.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\trigonometric.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_trigonometric.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\packing.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_packing.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_half.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\type_half.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\integer.hpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_integer.inl
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\string"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xstring"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\__msvc_string_view.hpp"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\iosfwd"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cctype"
+CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\ctype.h"
+
+
 CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: F:\graphicsengine\Engine\Utility\ShapeFactory.cpp
 CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: F:\graphicsengine\Engine\Utility\ShapeFactory.h
 CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: F:\graphicsengine\Engine\Utility\..\Renderer\Mesh.h
@@ -2268,8 +2531,47 @@ CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: F:\vcpkg\inst
 CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.obj: F:\vcpkg\installed\x64-windows\include\glm\detail\func_integer.inl
 
 
-CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj: F:\graphicsengine\Engine\Utility\stb_image.cpp
-CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj: F:\graphicsengine\Engine\Utility\stb_image.h
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: F:\graphicsengine\Engine\Utility\stb_impl.cpp
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: F:\vcpkg\installed\x64-windows\include\stb_image.h
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stdio.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\sal.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\concurrencysal.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vadefs.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstdio.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_stdio_config.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stdlib.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_malloc.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_search.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stddef.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstdlib.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\limits.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\stdarg.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\string.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_memory.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_memcpy_s.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\errno.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\vcruntime_string.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_wstring.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\math.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\corecrt_math.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\assert.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\emmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\mmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\malloc.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\intrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\intrin0.inl.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\setjmp.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\immintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\wmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\nmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\smmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\tmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\pmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\zmmintrin.h"
+CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\ammintrin.h"
 
 
 CMakeFiles\graphicsengine.dir\main.cpp.obj: F:\graphicsengine\main.cpp
@@ -2696,6 +2998,8 @@ F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_double3.hpp:
 
 "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt\stdlib.h":
 
+F:\graphicsengine\Engine\Utility\stb_impl.cpp:
+
 "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\__msvc_sanitizer_annotate_container.hpp":
 
 F:\vcpkg\installed\x64-windows\include\glm\mat3x3.hpp:
@@ -2874,6 +3178,8 @@ F:\vcpkg\installed\x64-windows\include\glm\detail\_fixes.hpp:
 
 "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\cmath":
 
+"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared\winapifamily.h":
+
 F:\vcpkg\installed\x64-windows\include\glm\detail\setup.hpp:
 
 "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\xlocnum":
@@ -2887,6 +3193,8 @@ F:\vcpkg\installed\x64-windows\include\glm\fwd.hpp:
 F:\vcpkg\installed\x64-windows\include\glm\detail\qualifier.hpp:
 
 F:\vcpkg\installed\x64-windows\include\glm\vec2.hpp:
+
+"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um\GL\gl.h":
 
 F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool2.hpp:
 
@@ -2940,8 +3248,6 @@ F:\graphicsengine\Engine\Renderer\Mesh.cpp:
 
 F:\vcpkg\installed\x64-windows\include\glm\vec3.hpp:
 
-F:\graphicsengine\Engine\Utility\stb_image.cpp:
-
 F:\vcpkg\installed\x64-windows\include\glm\detail\func_matrix.inl:
 
 F:\vcpkg\installed\x64-windows\include\glm\.\ext\vector_bool3.hpp:
@@ -2951,6 +3257,8 @@ F:\vcpkg\installed\x64-windows\include\glm\ext\..\detail\type_vec3.hpp:
 F:\vcpkg\installed\x64-windows\include\glm\detail\type_vec3.inl:
 
 F:\vcpkg\installed\x64-windows\include\glm\detail\compute_vector_decl.hpp:
+
+"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared\winpackagefamily.h":
 
 "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\functional":
 
@@ -3234,11 +3542,13 @@ F:\graphicsengine\Engine\Scene\..\Renderer\Texture.h:
 
 F:\graphicsengine\Engine\Renderer\..\Scene\Light.h:
 
-F:\graphicsengine\Engine\Renderer\Mesh.h:
+F:\graphicsengine\Engine\Utility\Input.h:
 
 F:\vcpkg\installed\x64-windows\include\glm\gtc\..\ext\quaternion_common.hpp:
 
 F:\vcpkg\installed\x64-windows\include\stb_image.h:
+
+F:\graphicsengine\Engine\Renderer\Mesh.h:
 
 F:\graphicsengine\Engine\Renderer\Renderer.cpp:
 
@@ -3292,10 +3602,12 @@ F:\vcpkg\installed\x64-windows\include\glm\gtc\type_ptr.inl:
 
 F:\graphicsengine\Engine\Scene\Camera.h:
 
+F:\graphicsengine\Engine\Utility\Input.cpp:
+
 F:\graphicsengine\Engine\Utility\ShapeFactory.cpp:
 
 F:\graphicsengine\Engine\Utility\ShapeFactory.h:
 
-F:\graphicsengine\Engine\Utility\stb_image.h:
+"C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\stdarg.h":
 
 F:\graphicsengine\main.cpp:

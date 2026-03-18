@@ -310,6 +310,30 @@ Engine\Scene\Scenemap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.s
 .PHONY : Engine\Scene\Scenemap.cpp.s
 
+Engine\Utility\Input.obj: Engine\Utility\Input.cpp.obj
+.PHONY : Engine\Utility\Input.obj
+
+# target to build an object file
+Engine\Utility\Input.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.obj
+.PHONY : Engine\Utility\Input.cpp.obj
+
+Engine\Utility\Input.i: Engine\Utility\Input.cpp.i
+.PHONY : Engine\Utility\Input.i
+
+# target to preprocess a source file
+Engine\Utility\Input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.i
+.PHONY : Engine\Utility\Input.cpp.i
+
+Engine\Utility\Input.s: Engine\Utility\Input.cpp.s
+.PHONY : Engine\Utility\Input.s
+
+# target to generate assembly for a file
+Engine\Utility\Input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.s
+.PHONY : Engine\Utility\Input.cpp.s
+
 Engine\Utility\ShapeFactory.obj: Engine\Utility\ShapeFactory.cpp.obj
 .PHONY : Engine\Utility\ShapeFactory.obj
 
@@ -334,29 +358,29 @@ Engine\Utility\ShapeFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\ShapeFactory.cpp.s
 .PHONY : Engine\Utility\ShapeFactory.cpp.s
 
-Engine\Utility\stb_image.obj: Engine\Utility\stb_image.cpp.obj
-.PHONY : Engine\Utility\stb_image.obj
+Engine\Utility\stb_impl.obj: Engine\Utility\stb_impl.cpp.obj
+.PHONY : Engine\Utility\stb_impl.obj
 
 # target to build an object file
-Engine\Utility\stb_image.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.obj
-.PHONY : Engine\Utility\stb_image.cpp.obj
+Engine\Utility\stb_impl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.obj
+.PHONY : Engine\Utility\stb_impl.cpp.obj
 
-Engine\Utility\stb_image.i: Engine\Utility\stb_image.cpp.i
-.PHONY : Engine\Utility\stb_image.i
+Engine\Utility\stb_impl.i: Engine\Utility\stb_impl.cpp.i
+.PHONY : Engine\Utility\stb_impl.i
 
 # target to preprocess a source file
-Engine\Utility\stb_image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.i
-.PHONY : Engine\Utility\stb_image.cpp.i
+Engine\Utility\stb_impl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.i
+.PHONY : Engine\Utility\stb_impl.cpp.i
 
-Engine\Utility\stb_image.s: Engine\Utility\stb_image.cpp.s
-.PHONY : Engine\Utility\stb_image.s
+Engine\Utility\stb_impl.s: Engine\Utility\stb_impl.cpp.s
+.PHONY : Engine\Utility\stb_impl.s
 
 # target to generate assembly for a file
-Engine\Utility\stb_image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\stb_image.cpp.s
-.PHONY : Engine\Utility\stb_image.cpp.s
+Engine\Utility\stb_impl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.s
+.PHONY : Engine\Utility\stb_impl.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -415,12 +439,15 @@ help:
 	@echo ... Engine/Scene/Scenemap.obj
 	@echo ... Engine/Scene/Scenemap.i
 	@echo ... Engine/Scene/Scenemap.s
+	@echo ... Engine/Utility/Input.obj
+	@echo ... Engine/Utility/Input.i
+	@echo ... Engine/Utility/Input.s
 	@echo ... Engine/Utility/ShapeFactory.obj
 	@echo ... Engine/Utility/ShapeFactory.i
 	@echo ... Engine/Utility/ShapeFactory.s
-	@echo ... Engine/Utility/stb_image.obj
-	@echo ... Engine/Utility/stb_image.i
-	@echo ... Engine/Utility/stb_image.s
+	@echo ... Engine/Utility/stb_impl.obj
+	@echo ... Engine/Utility/stb_impl.i
+	@echo ... Engine/Utility/stb_impl.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
