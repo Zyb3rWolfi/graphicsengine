@@ -4,6 +4,7 @@
 
 #ifndef GRAPHICSENGINE_SHADER_H
 #define GRAPHICSENGINE_SHADER_H
+
 #include <glad/glad.h> // Include glad to get all the required OpenGL headers
 #include <string>
 #include <fstream>

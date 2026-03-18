@@ -1,0 +1,4 @@
+"F:\Jetbrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=F:\vcpkg\scripts\buildsystems\vcpkg.cmake -G "NMake Makefiles" -S F:\graphicsengine -B F:\graphicsengine\cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: F:/graphicsengine/cmake-build-debug

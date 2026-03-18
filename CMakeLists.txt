@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.1)
+cmake_minimum_required(VERSION 3.29.6)
 project(graphicsengine)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -23,6 +23,11 @@ add_executable(graphicsengine main.cpp
         Engine/Scene/Light.h
         Engine/Core/Application.cpp
         Engine/Core/Application.h
+        main.cpp
+        main.cpp
+        main.cpp
+        Engine/Utility/stb_image.cpp
+        Engine/Utility/stb_image.h
 )
 find_package(glfw3 CONFIG REQUIRED)
 target_link_libraries(graphicsengine PRIVATE glfw)
