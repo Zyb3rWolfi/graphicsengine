@@ -1,5 +1,5 @@
 #include "ShapeFactory.h"
-#include "Mesh.h"
+#include "../Renderer/Mesh.h"
 
 ShapeFactory::ShapeFactory() {
 }

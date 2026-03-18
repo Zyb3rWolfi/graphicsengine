@@ -4,13 +4,13 @@
 
 #ifndef GRAPHICSENGINE_SCENEMAP_H
 #define GRAPHICSENGINE_SCENEMAP_H
-#include "Mesh.h"
+#include "../Renderer/Mesh.h"
 #include <vector>
 #include <memory>
 #include <glm/glm.hpp>
 
-#include "Texture.h"
-#include "Shader.h"
+#include "../Renderer/Shader.h"
+#include "../Renderer/Texture.h"
 
 // Forward declarations
 class SceneNode;

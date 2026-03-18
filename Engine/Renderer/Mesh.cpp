@@ -12,6 +12,7 @@
 
 glm::vec3 objectColor;
 glm::vec3 lightColor;
+
 Mesh::Mesh(float vertices[], unsigned int indices[], unsigned int vertexSize, unsigned int indicesSize) {
     vertexCount = indicesSize / sizeof(unsigned int);
     objectColor = glm::vec3(1.0f, 0.5f, 0.31f);
@@ -42,13 +43,13 @@ void Mesh::SetupAttributes() {
     // 3: The data type is a float
     // 4: Tells how many steps we need to jump to the next data
     // 5: where does our data start?
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void *) 0);
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, (void*)(sizeof(float) * 3));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 3));
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void*)(sizeof(float) * 6));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 6));
     glEnableVertexAttribArray(2);
-        glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, stride, (void*)(sizeof(float) * 8));
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 8));
     glEnableVertexAttribArray(3);
 }
 
@@ -56,7 +57,6 @@ void Mesh::Draw() {
     glBindVertexArray(vao);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glDrawElements(GL_TRIANGLES, vertexCount, GL_UNSIGNED_INT, 0);
-
 }
 
 void Mesh::SetLighting(glm::vec3 lightColor, glm::vec3 objectColor, Shader shader) {

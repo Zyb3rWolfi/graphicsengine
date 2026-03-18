@@ -1,6 +1,6 @@
 #include <glm/vec3.hpp>
 
-#include "Light.h"
+#include "../Scene/Light.h"
 //
 // Created by Zyb3r on 13/02/2026.
 //
@@ -8,28 +8,26 @@ using namespace glm;
 
 #include "Renderer.h"
 
-void Renderer::Draw(Scenemap& scene, Camera& camera, std::vector<Light>& lights) {
-
-    for (auto& rootNode : scene.GetRootNodes()) {
-
+void Renderer::Draw(Scenemap &scene, Camera &camera, std::vector<Light> &lights) {
+    for (auto &rootNode: scene.GetRootNodes()) {
         RenderNode(rootNode, glm::mat4(1.0f), camera, lights);
     }
 }
 
 
-void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat4 &parentTransform, Camera &camera, std::vector<Light>& lights) {
-
+void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat4 &parentTransform, Camera &camera,
+                          std::vector<Light> &lights) {
     // 1 - First calculating the world transform for this node by combining the parent transform with the node's local transform
     // World = Parent * Local
     glm::mat4 transform = parentTransform * glm::translate(glm::mat4(1.0f), node->GetPosition());
-    for (auto& meshNode : node->GetChildMeshes()) {
+    for (auto &meshNode: node->GetChildMeshes()) {
         // Skip if no shader is assigned to this mesh
         if (meshNode.shader == nullptr) {
             continue;
         }
 
         // Use the shader assigned to this mesh
-        Shader* shader = meshNode.shader;
+        Shader *shader = meshNode.shader;
         shader->use();
 
         shader->setInt("numLights", static_cast<int>(lights.size()));
@@ -37,8 +35,8 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
         for (int i = 0; i < static_cast<int>(lights.size()); i++) {
             std::string base = "lights[" + std::to_string(i) + "]";
             shader->setVec3(base + ".position", lights[i].position);
-            shader->setVec3(base + ".ambient",  lights[i].ambient);
-            shader->setVec3(base + ".diffuse",  lights[i].diffuse);
+            shader->setVec3(base + ".ambient", lights[i].ambient);
+            shader->setVec3(base + ".diffuse", lights[i].diffuse);
             shader->setVec3(base + ".specular", lights[i].specular);
         }
 
@@ -64,20 +62,20 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
             glActiveTexture(GL_TEXTURE0);
             glBindTexture(GL_TEXTURE_2D, meshNode.texture->texture); // Access your ID
             glActiveTexture(GL_TEXTURE1);
-                if (meshNode.SpecularTexture != nullptr) {
-                    glBindTexture(GL_TEXTURE_2D, meshNode.SpecularTexture->texture); // Access your ID
-                    shader->setInt("material.specular", 1);
-                } else {
-                    shader->setInt("material.specular", 0); // No specular map
-                }
+            if (meshNode.SpecularTexture != nullptr) {
+                glBindTexture(GL_TEXTURE_2D, meshNode.SpecularTexture->texture); // Access your ID
+                shader->setInt("material.specular", 1);
+            } else {
+                shader->setInt("material.specular", 0); // No specular map
+            }
 
             glActiveTexture(GL_TEXTURE2);
-                if (meshNode.EmissionTexture != nullptr) {
-                    glBindTexture(GL_TEXTURE_2D, meshNode.EmissionTexture->texture); // Access your ID
-                    shader->setInt("material.emission", 2);
-                } else {
-                    shader->setInt("material.emission", 0); // No emission map
-                }
+            if (meshNode.EmissionTexture != nullptr) {
+                glBindTexture(GL_TEXTURE_2D, meshNode.EmissionTexture->texture); // Access your ID
+                shader->setInt("material.emission", 2);
+            } else {
+                shader->setInt("material.emission", 0); // No emission map
+            }
             shader->setInt("ourTexture", 0);
         } else {
             shader->setBool("useTexture", false);
@@ -86,7 +84,7 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
         meshNode.mesh->Draw();
     }
 
-    for (auto& childNode : node->GetChildNodes()) {
+    for (auto &childNode: node->GetChildNodes()) {
         // 4 - Recursively render child nodes, passing the current node's world transform as the new parent transform
         RenderNode(childNode, transform, camera, lights);
     }

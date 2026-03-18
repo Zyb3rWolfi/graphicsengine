@@ -1,0 +1,23 @@
+//
+// Created by Zyb3r on 13/02/2026.
+//
+
+#ifndef GRAPHICSENGINE_RENDERER_H
+#define GRAPHICSENGINE_RENDERER_H
+#include "../Scene/Camera.h"
+#include "../Scene/Scenemap.h"
+#include "../Scene/Light.h"
+
+
+class Renderer {
+public:
+    void Draw(Scenemap &scene, Camera &camera, std::vector<Light> &lights);
+
+private:
+    // Recursive function to handle the parent-child math
+    void RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat4 &parentTransform, Camera &camera,
+                    std::vector<Light> &lights);
+};
+
+
+#endif //GRAPHICSENGINE_RENDERER_H

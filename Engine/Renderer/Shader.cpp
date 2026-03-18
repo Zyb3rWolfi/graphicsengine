@@ -6,8 +6,7 @@
 
 #include <glm/gtc/type_ptr.hpp>
 
-Shader::Shader(const char* vertexPath, const char* fragmentPath) {
-
+Shader::Shader(const char *vertexPath, const char *fragmentPath) {
     // 1. Retreieve the vertex/fragment source code
     std::string vertexCode;
     std::string fragmentCode;
@@ -17,7 +16,6 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     vShaderFile.exceptions(std::ifstream::badbit);
     fShaderFile.exceptions(std::ifstream::badbit);
     try {
-
         // opening file
         vShaderFile.open(vertexPath);
         fShaderFile.open(fragmentPath);
@@ -31,12 +29,12 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
         // convert stream into string
         vertexCode = vShaderStream.str();
         fragmentCode = fShaderStream.str();
-    } catch (std::ifstream::failure& e) {
+    } catch (std::ifstream::failure &e) {
         std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << std::endl;
     }
 
-    const char* vShaderCode = vertexCode.c_str();
-    const char* fShaderCode = fragmentCode.c_str();
+    const char *vShaderCode = vertexCode.c_str();
+    const char *fShaderCode = fragmentCode.c_str();
 
     // 2. Compiling shaders
     unsigned int vertex, fragment;
@@ -84,12 +82,15 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 void Shader::use() {
     glUseProgram(ID);
 }
+
 void Shader::setBool(const std::string &name, bool value) const {
-    glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value);
+    glUniform1i(glGetUniformLocation(ID, name.c_str()), (int) value);
 }
+
 void Shader::setInt(const std::string &name, int value) const {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 }
+
 void Shader::setFloat(const std::string &name, float value) const {
     glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 }

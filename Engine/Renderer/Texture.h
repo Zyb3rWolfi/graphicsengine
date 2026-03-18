@@ -13,7 +13,9 @@ public:
     unsigned char *data;
     unsigned int texture;
     int width, height, nrComponents;
+
     Texture(const std::string &fileName);
+
     unsigned int use() const;
 };
 
