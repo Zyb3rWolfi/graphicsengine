@@ -10,10 +10,9 @@
 #endif //GRAPHICSENGINE_VERTEX_H
 
 struct Vertex {
-    glm::vec3 Position;
-    glm::vec3 Color;
-    glm::vec2 TexCoords;
-    glm::vec3 Normal;
-    // You even have Tangents in your shader already!
-    glm::vec3 Tangent;
+    glm::vec3 Position;  // 3 floats (offset 0)
+    glm::vec3 Color;     // 3 floats (offset 3)
+    glm::vec2 TexCoords; // 2 floats (offset 6)
+    glm::vec3 Normal;    // 3 floats (offset 8)
+    glm::vec3 Tangent;   // Total: 11 floats per vertex
 };

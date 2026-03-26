@@ -15,6 +15,7 @@ out vec3 Normal;
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
+uniform mat3 normalMatrix;
 
 void main()
 {
@@ -25,7 +26,7 @@ void main()
     TBN = mat3(T, B, N); // Construct TBN matrix
     gl_Position = projection * view * model * vec4(aPos, 1.0);
     FragPos = vec3(model * vec4(aPos, 1.0));
-    Normal = mat3(transpose(inverse(model))) * aNormal; // Transform normal vector
+    Normal = normalMatrix * aNormal; // Transform normal to world space
 
     ourColor = aColor;
     TexCoord = aTexCoord;

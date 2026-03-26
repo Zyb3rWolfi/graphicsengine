@@ -9,6 +9,7 @@
 
 #include "Shader.h"
 #include "stb_image.h"
+#include "Vertex.h"
 
 glm::vec3 objectColor;
 glm::vec3 lightColor;
@@ -37,20 +38,28 @@ Mesh::Mesh(float vertices[], unsigned int indices[], unsigned int vertexSize, un
 }
 
 void Mesh::SetupAttributes() {
-    int stride = 11 * sizeof(float);
-    // 1: first location
-    // 2: tells the size of our data is 3
-    // 3: The data type is a float
-    // 4: Tells how many steps we need to jump to the next data
-    // 5: where does our data start?
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void *) 0);
+    GLsizei stride = sizeof(Vertex);
+
+    // Location 0: Position (vec3)
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 3));
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void*)offsetof(Vertex, Position));
+
+    // Location 1: Color (vec3)
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 6));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, (void*)offsetof(Vertex, Color));
+
+    // Location 2: Texture Coordinates (vec2)
     glEnableVertexAttribArray(2);
-    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 8));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void*)offsetof(Vertex, TexCoords));
+
+    // Location 3: Normals (vec3)
     glEnableVertexAttribArray(3);
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, stride, (void*)offsetof(Vertex, Normal));
+
+    glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 8));
+    glEnableVertexAttribArray(4);
+
+
 }
 
 void Mesh::Draw() {

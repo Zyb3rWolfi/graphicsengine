@@ -32,6 +32,8 @@ public:
 
     void setVec3(const std::string &name, const glm::vec3 &value) const;
 
+    void setMat3(const std::string &name, const glm::mat3 &mat) const;
+
 private:
     std::string Get(const char *path);
     void checkCompileErrors(unsigned int shader, std::string type);
