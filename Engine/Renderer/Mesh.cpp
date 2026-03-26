@@ -25,7 +25,6 @@ Mesh::Mesh(float vertices[], unsigned int indices[], unsigned int vertexSize, un
     glGenVertexArrays(1, &lightVAO);
     glBindVertexArray(lightVAO);
 
-    glBindBuffer(GL_ARRAY_BUFFER, lightVAO);
 
     glBindVertexArray(vao);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -56,8 +55,11 @@ void Mesh::SetupAttributes() {
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, stride, (void*)offsetof(Vertex, Normal));
 
-    glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, stride, (void *) (sizeof(float) * 8));
+    // Location 3: Normals (vec3)
     glEnableVertexAttribArray(4);
+    glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, stride, (void*)offsetof(Vertex, Tangent));
+
+
 
 
 }

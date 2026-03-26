@@ -13,6 +13,8 @@ uniform vec3 objectColor;
 uniform vec3 viewPos;
 uniform bool useTexture;
 uniform int numLights;
+uniform bool useNormalMap;
+uniform sampler2D normalMap;
 
 struct Light {
     vec3 position;
