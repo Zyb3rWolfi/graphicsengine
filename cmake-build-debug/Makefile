@@ -358,6 +358,30 @@ Engine\Utility\Input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\Input.cpp.s
 .PHONY : Engine\Utility\Input.cpp.s
 
+Engine\Utility\ResourceManager.obj: Engine\Utility\ResourceManager.cpp.obj
+.PHONY : Engine\Utility\ResourceManager.obj
+
+# target to build an object file
+Engine\Utility\ResourceManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\ResourceManager.cpp.obj
+.PHONY : Engine\Utility\ResourceManager.cpp.obj
+
+Engine\Utility\ResourceManager.i: Engine\Utility\ResourceManager.cpp.i
+.PHONY : Engine\Utility\ResourceManager.i
+
+# target to preprocess a source file
+Engine\Utility\ResourceManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\ResourceManager.cpp.i
+.PHONY : Engine\Utility\ResourceManager.cpp.i
+
+Engine\Utility\ResourceManager.s: Engine\Utility\ResourceManager.cpp.s
+.PHONY : Engine\Utility\ResourceManager.s
+
+# target to generate assembly for a file
+Engine\Utility\ResourceManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\ResourceManager.cpp.s
+.PHONY : Engine\Utility\ResourceManager.cpp.s
+
 Engine\Utility\ShapeFactory.obj: Engine\Utility\ShapeFactory.cpp.obj
 .PHONY : Engine\Utility\ShapeFactory.obj
 
@@ -469,6 +493,9 @@ help:
 	@echo ... Engine/Utility/Input.obj
 	@echo ... Engine/Utility/Input.i
 	@echo ... Engine/Utility/Input.s
+	@echo ... Engine/Utility/ResourceManager.obj
+	@echo ... Engine/Utility/ResourceManager.i
+	@echo ... Engine/Utility/ResourceManager.s
 	@echo ... Engine/Utility/ShapeFactory.obj
 	@echo ... Engine/Utility/ShapeFactory.i
 	@echo ... Engine/Utility/ShapeFactory.s

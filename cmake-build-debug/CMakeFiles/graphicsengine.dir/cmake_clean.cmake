@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphicsengine.dir/Engine/Utility/EngineTime.cpp.obj.d"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.obj"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/Input.cpp.obj.d"
+  "CMakeFiles/graphicsengine.dir/Engine/Utility/ResourceManager.cpp.obj"
+  "CMakeFiles/graphicsengine.dir/Engine/Utility/ResourceManager.cpp.obj.d"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.obj"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/ShapeFactory.cpp.obj.d"
   "CMakeFiles/graphicsengine.dir/Engine/Utility/stb_impl.cpp.obj"

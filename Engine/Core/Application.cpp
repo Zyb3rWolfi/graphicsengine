@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "Input.h"
+#include "ResourceManager.h"
 #include "../Utility/EngineTime.h"
 #include "stb_image.h"
 #include "../Utility/ShapeFactory.h"
@@ -53,10 +54,11 @@ bool Application::Init() {
 
 void Application::Run() {
     EngineTime::Update();
-    float dt = EngineTime::GetDeltaTime();
+
 
     ShapeFactory factory;
     // Loading resources moved from your main.cpp
+    //ResourceManager::LoadShader("Shaders/shader.vert", "VertShader");
     Shader shader("Shaders/shader.vert", "Shaders/shader.frag");
     Shader shader2("Shaders/sourceShader.vert", "Shaders/sourceShader.frag");
 
@@ -70,14 +72,17 @@ void Application::Run() {
     cubeMain.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);
     cubeMain.specular = glm::vec3(1.0f, 1.0f, 1.0f);
 
+    ResourceManager::LoadTexture("Images/container2.png", "container_map");
+    ResourceManager::LoadTexture("Images/container2_specular.png", "container_specular");
     Texture diff("Images/container2.png");
     Texture spec("Images/container2_specular.png");
 
     auto root = scene.AddRootNode(glm::vec3(0.0f));
-    root->AddChildMesh(&cubeMain, &diff, &spec, nullptr, &shader, glm::vec3(2.0f, 0.0f, 0.0f));
+    root->AddChildMesh(&cubeMain, ResourceManager::GetTexture("container_map"), ResourceManager::GetTexture("container_specular"), nullptr, &shader, glm::vec3(2.0f, 0.0f, 0.0f));
     root->AddChildMesh(&cubeLight, nullptr, nullptr, nullptr, &shader2, glm::vec3(-2.0f, 1.0f, -1.0f));
 
     while (!glfwWindowShouldClose(window)) {
+        float dt = EngineTime::GetDeltaTime();
 
         ProcessInput(dt);
         Update(dt);
