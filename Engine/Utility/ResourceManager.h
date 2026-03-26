@@ -15,10 +15,13 @@ using namespace std;
 class ResourceManager {
 public:
     static void LoadTexture(const std::string& texture_path, const std::string& name);
-    static void LoadShader(const std::string&, const std::string &name);
+    static void LoadShader(const std::string& vPath, const std::string& fPath, const std::string& name);
 
     static Shader *GetShader(const std::string& name);
+
     static Texture *GetTexture(const std::string &name);
+
+    static void Clean();
 private:
     static std::unordered_map<std::string, Texture*> textures_loaded;
     static std::unordered_map<std::string, Shader*> shadersLoaded;

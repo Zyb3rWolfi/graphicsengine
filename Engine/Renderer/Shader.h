@@ -16,7 +16,9 @@ class Shader {
 public:
     unsigned int ID;
 
-    Shader(const char *vertexPAth, const char *fragmentPath);
+    Shader(const char* vertexPath, const char* fragmentPath);
+
+    unsigned int Compile(const char *Code, GLenum type);
 
     void use();
 
@@ -31,6 +33,7 @@ public:
     void setVec3(const std::string &name, const glm::vec3 &value) const;
 
 private:
+    std::string Get(const char *path);
     void checkCompileErrors(unsigned int shader, std::string type);
 };
 

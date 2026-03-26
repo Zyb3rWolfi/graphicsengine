@@ -59,8 +59,9 @@ void Application::Run() {
     ShapeFactory factory;
     // Loading resources moved from your main.cpp
     //ResourceManager::LoadShader("Shaders/shader.vert", "VertShader");
-    Shader shader("Shaders/shader.vert", "Shaders/shader.frag");
-    Shader shader2("Shaders/sourceShader.vert", "Shaders/sourceShader.frag");
+
+    ResourceManager::LoadShader("Shaders/shader.vert", "Shaders/shader.frag", "MainShader");
+    ResourceManager::LoadShader("Shaders/sourceShader.vert", "Shaders/sourceShader.frag", "LightShader");
 
     Mesh cubeMain = factory.CreateCube();
     Mesh cubeLight = factory.CreateCube();
@@ -78,8 +79,19 @@ void Application::Run() {
     Texture spec("Images/container2_specular.png");
 
     auto root = scene.AddRootNode(glm::vec3(0.0f));
-    root->AddChildMesh(&cubeMain, ResourceManager::GetTexture("container_map"), ResourceManager::GetTexture("container_specular"), nullptr, &shader, glm::vec3(2.0f, 0.0f, 0.0f));
-    root->AddChildMesh(&cubeLight, nullptr, nullptr, nullptr, &shader2, glm::vec3(-2.0f, 1.0f, -1.0f));
+
+    root->AddChildMesh(&cubeMain,
+        ResourceManager::GetTexture("container_map"),
+        ResourceManager::GetTexture("container_specular"),
+        nullptr, ResourceManager::GetShader("MainShader"),
+        glm::vec3(2.0f, 0.0f, 0.0f));
+
+    root->AddChildMesh(&cubeLight,
+        nullptr,
+        nullptr,
+        nullptr,
+        ResourceManager::GetShader("LightShader"),
+        glm::vec3(-2.0f, 1.0f, -1.0f));
 
     while (!glfwWindowShouldClose(window)) {
         float dt = EngineTime::GetDeltaTime();
@@ -150,4 +162,5 @@ void Application::FramebufferSizeCallback(GLFWwindow* window, int width, int hei
 
 Application::~Application() {
     glfwTerminate();
+    ResourceManager::Clean();
 }
