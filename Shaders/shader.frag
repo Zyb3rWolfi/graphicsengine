@@ -6,6 +6,7 @@ in vec3 ourColor;
 in vec2 TexCoord;
 in vec3 Normal;
 in vec3 FragPos;
+in mat3 TBN;
 
 uniform sampler2D ourTexture;
 uniform vec3 objectColor;
@@ -30,13 +31,23 @@ uniform struct Material {
 
 void main()
 {
+    vec3 norm;
+    if(useNormalMap) {
+        // Sample and transform from [0,1] to [-1,1]
+        norm = texture(normalMap, TexCoord).rgb;
+        norm = normalize(norm * 2.0 - 1.0);
+        // Use TBN to move the normal from tangent space to world space
+        norm = normalize(TBN * norm);
+    } else {
+        norm = normalize(Normal); // Fallback to vertex normal
+    }
+
     vec3 albedo = useTexture ? texture(material.diffuse, TexCoord).rgb : objectColor;
 
     float ambientStrength = 0.1;
     float specularStrength = 0.5;
 
     // Diffuse
-    vec3 norm = normalize(Normal);
     vec3 result = vec3(0.0);
 
     for (int i = 0; i < numLights; i++) {

@@ -80,6 +80,16 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
             } else {
                 shader->setInt("material.emission", 10); // No emission map
             }
+
+            glActiveTexture(GL_TEXTURE3);
+            if (meshNode.NormalTexture != nullptr) {
+                glBindTexture(GL_TEXTURE_2D, meshNode.NormalTexture->texture);
+                shader->setInt("normalMap", 3);
+                shader->setBool("useNormalMap", true);
+            } else {
+                shader->setBool("useNormalMap", false);
+            }
+
             shader->setInt("ourTexture", 0);
         } else {
             shader->setBool("useTexture", false);

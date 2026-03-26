@@ -83,10 +83,13 @@ void Application::Run() {
     root->AddChildMesh(&cubeMain,
         ResourceManager::GetTexture("container_map"),
         ResourceManager::GetTexture("container_specular"),
-        nullptr, ResourceManager::GetShader("MainShader"),
+        nullptr,
+        nullptr,
+        ResourceManager::GetShader("MainShader"),
         glm::vec3(2.0f, 0.0f, 0.0f));
 
     root->AddChildMesh(&cubeLight,
+        nullptr,
         nullptr,
         nullptr,
         nullptr,
