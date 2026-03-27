@@ -1,14 +1,12 @@
 #include "Application.h"
 #include <iostream>
 
+#include "GameObject.h"
 #include "Input.h"
 #include "ResourceManager.h"
 #include "../Utility/EngineTime.h"
-#include "stb_image.h"
 #include "../Utility/ShapeFactory.h"
-#include "../Renderer/Shader.h"
 #include "../Renderer/Mesh.h"
-#include "../Renderer/Texture.h"
 
 // ========== APPLICATION CLASS ==========
 // Application: Main engine class that manages the entire graphics engine
@@ -31,8 +29,33 @@
 Application::Application(unsigned int width, unsigned int height)
     : screenWidth(width), screenHeight(height), camera(glm::vec3(0.0f, 0.0f, 3.0f)) {
 
+    // ========== LIGHTING SETUP ==========
+    // The engine supports three types of lights: Directional, Point, and Spot
+
+    // Directional Light (like the sun - comes from infinity)
+    Light dirLight;
+    dirLight.LightType = LightType::DIRECTIONAL;
+    dirLight.direction = glm::normalize(glm::vec3(-0.5f, -1.0f, -0.3f));  // Direction light travels FROM
+    dirLight.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
+    dirLight.diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
+    dirLight.specular = glm::vec3(1.0f, 1.0f, 1.0f);
+
+    // Point Light (like a light bulb - emits from a position)
+    Light pointLight;
+    pointLight.LightType = LightType::POINT;
+    pointLight.position = glm::vec3(-2.0f, 1.0f, -1.0f);
+    pointLight.ambient = glm::vec3(0.05f, 0.05f, 0.05f);
+    pointLight.diffuse = glm::vec3(0.8f, 0.7f, 0.5f);
+    pointLight.specular = glm::vec3(1.0f, 1.0f, 0.8f);
+    // Attenuation for ~50 unit range
+    pointLight.constant = 1.0f;
+    pointLight.linear = 0.09f;
+    pointLight.quadratic = 0.032f;
+
+    // Add lights to the scene
     lights = {
-        Light(glm::vec3(-2.0f, 1.0f, -1.0f)),  // Light positioned to the left and above
+        //dirLight,    // Directional light acts like sun/moon
+        pointLight   // Point light acts like a torch or bulb
     };
 }
 
@@ -101,51 +124,27 @@ void Application::Run() {
     // ========== SCENE SETUP ==========
     ShapeFactory factory;
 
-    // Load shader programs from disk
-    // Each shader consists of vertex and fragment shader source files
-    // Shaders are registered by name for later retrieval and use
     ResourceManager::LoadShader("Shaders/shader.vert", "Shaders/shader.frag", "MainShader");     // Main lighting shader
-    ResourceManager::LoadShader("Shaders/sourceShader.vert", "Shaders/sourceShader.frag", "LightShader");  // Light source shader
-
-    // Create two cube meshes using ShapeFactory
-    // These are raw GPU geometry - they're moved into the scene graph next
-    Mesh cubeMain = factory.CreateCube();
-    Mesh cubeLight = factory.CreateCube();
-
-    // ========== CONFIGURE MAIN CUBE ==========
-    // Set material properties for the first cube
-    cubeMain.objectColor = glm::vec3(0.0f, 1.0f, 0.0f);  // Green base color
-    cubeMain.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);   // White light (unused mostly)
-    cubeMain.shininess = 32.0f;                          // Moderate shininess
-    cubeMain.ambient = glm::vec3(0.2f, 0.2f, 0.2f);      // Low ambient = dark in shadows
-    cubeMain.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);      // Light diffuse = bright scattered light
-    cubeMain.specular = glm::vec3(1.0f, 1.0f, 1.0f);     // Full white specular = shiny highlights
-
-    // ========== LOAD TEXTURES ==========
-    // Load texture files into ResourceManager for use on meshes
+    ResourceManager::LoadShader("Shaders/sourceShader.vert", "Shaders/sourceShader.frag", "LightShader");  // Light source shaders
     ResourceManager::LoadTexture("Images/wall/default.jpg", "wall_map");    // Diffuse/color texture
     ResourceManager::LoadTexture("Images/wall/normal.jpg", "wall_normal");  // Normal map for surface detail
 
-    // ========== BUILD SCENE GRAPH ==========
-    // Create root node at origin (0, 0, 0)
-    // The scene graph organizes meshes hierarchically
     auto root = scene.AddRootNode(glm::vec3(0.0f));
 
-    root->AddChildMesh(std::move(cubeMain),
-        ResourceManager::GetTexture("wall_map"),    // Use the wood texture
-        nullptr,                                     // No specular map
-        nullptr,                                     // No emission
-        ResourceManager::GetTexture("wall_normal"),  // Use normal map for surface detail
-        ResourceManager::GetShader("MainShader"),    // Use main lighting shader
-        glm::vec3(2.0f, 0.0f, 0.0f));                // Position at (2, 0, 0) in root space
+    auto wall = GameObject::CreateCube("wall");
+    wall->SetTexture(ResourceManager::GetTexture("wall_map"));
+    wall->SetNormalTexture(ResourceManager::GetTexture("wall_normal"));
+    wall->SetShader(ResourceManager::GetShader("MainShader"));
 
-    root->AddChildMesh(std::move(cubeLight),
-        nullptr,  // No texture
-        nullptr,  // No specular
-        nullptr,  // No emission
-        nullptr,  // No normal map
-        ResourceManager::GetShader("LightShader"),   // Use simple light shader
-        glm::vec3(-2.0f, 1.0f, -1.0f));              // Position at (-2, 1, -1)
+    for (int i = 0; i < 5; i++) {
+        auto wall = GameObject::CreateCube("wall");
+        wall->SetTexture(ResourceManager::GetTexture("wall_map"));
+        wall->SetNormalTexture(ResourceManager::GetTexture("wall_normal"));
+        wall->SetShader(ResourceManager::GetShader("MainShader"));
+
+        wall->SetPosition(glm::vec3(i * 1.0f, 0.0f, -5.0f));
+        root->AddChildNode(wall->node);
+    }
 
     // ========== MAIN RENDER LOOP ==========
     // Runs until window close is requested

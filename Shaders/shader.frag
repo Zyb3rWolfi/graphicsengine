@@ -1,15 +1,11 @@
 #version 330 core
 #define MAX_LIGHTS 8
 
-
-// shader.frag - Fragment Shader
-// This shader is executed once per pixel (fragment)
-// It calculates the final color by applying lighting, textures, and normal maps
-// Uses Phong lighting model with multiple light sources
-// LINKS FROM: Vertex shader (receives interpolated attributes)
-
-// ========== MAXIMUM LIGHTS ==========
-// Maximum number of lights that can affect the scene
+// ========== LIGHT TYPES ==========
+// Must match LightType enum in Light.h
+#define LIGHT_DIRECTIONAL 0
+#define LIGHT_POINT 1
+#define LIGHT_SPOT 2
 
 // ========== FRAGMENT OUTPUT ==========
 out vec4 FragColor;  // Final color (RGBA) for this pixel
@@ -22,12 +18,12 @@ in vec3 FragPos;     // Interpolated position in world space
 in mat3 TBN;         // Tangent-Bitangent-Normal matrix (for normal mapping)
 
 // ========== TEXTURE UNIFORMS ==========
-uniform sampler2D ourTexture;   // Main diffuse texture (unused, using material.diffuse instead)
+uniform sampler2D ourTexture;   // Main diffuse texture
 uniform sampler2D normalMap;    // Normal map for surface detail
 
 // ========== MATERIAL/COLOR UNIFORMS ==========
 uniform vec3 objectColor;       // Fallback color if no texture is used
-uniform vec3 viewPos;           // Camera position in world space (for specular calculations)
+uniform vec3 viewPos;           // Camera position in world space
 uniform bool useTexture;        // Whether to use texture or solid color
 uniform bool useNormalMap;      // Whether to use normal mapping
 
@@ -35,109 +31,158 @@ uniform bool useNormalMap;      // Whether to use normal mapping
 uniform int numLights;          // Number of active lights (0 to MAX_LIGHTS)
 
 // ========== LIGHT STRUCTURE ==========
-// Defines properties of each light source
+// Matches Light struct in Light.h (packed for GPU memory)
 struct Light {
-    vec3 position;      // Position in world space
-    vec3 ambient;       // Ambient color/intensity (light in all directions)
-    vec3 diffuse;       // Diffuse color/intensity (direct scattered light)
-    vec3 specular;      // Specular color/intensity (shiny highlights)
-    float constant;      // Attenuation constant term
-    float linear;        // Attenuation linear term
-    float quadratic;     // Attenuation quadratic term
+    int type;                   // 0 = Directional, 1 = Point, 2 = Spot
+    vec3 position;              // World position (unused for directional)
+    vec3 ambient;               // Ambient color/intensity
+    vec3 diffuse;               // Diffuse color/intensity
+    vec3 specular;              // Specular color/intensity
+    float constant;             // Attenuation constant (point/spot)
+    float linear;               // Attenuation linear (point/spot)
+    float quadratic;            // Attenuation quadratic (point/spot)
+    vec3 direction;             // Direction for directional/spot lights
+    float cutOff;               // Inner cutoff angle cosine (spot)
+    float outerCutOff;          // Outer cutoff angle cosine (spot)
 };
 
 // ========== MATERIAL STRUCTURE ==========
-// Defines surface material properties
 struct Material {
-    vec3 ambient;           // Ambient reflectance (how much ambient light is reflected)
+    vec3 ambient;           // Ambient reflectance
     sampler2D diffuse;      // Diffuse color texture
-    sampler2D specular;     // Specular/shininess texture (controls which areas are shiny)
-    float shininess;        // Shininess exponent (higher = sharper, more reflective highlights)
+    sampler2D specular;     // Specular/shininess texture
+    float shininess;        // Shininess exponent
 };
 
 // ========== GLOBAL SHADER UNIFORMS ==========
-uniform Light lights[MAX_LIGHTS];  // Array of up to 8 lights
-uniform Material material;         // Material properties for this mesh
+uniform Light lights[MAX_LIGHTS];   // Array of up to 8 lights
+uniform Material material;          // Material properties
+
+// ========== HELPER FUNCTIONS ==========
+
+// Calculate attenuation for point/spot lights using inverse quadratic formula
+float CalcAttenuation(Light light, float distance) {
+    return 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
+}
+
+// ========== DIRECTIONAL LIGHT CALCULATION ==========
+// Directional lights come from infinity in a fixed direction
+// Examples: Sun, Moon
+vec3 CalcDirLight(Light light, vec3 normal, vec3 viewDir, vec3 albedo, float specMap) {
+    // Light direction is from the light source direction (opposite of travel)
+    vec3 lightDir = normalize(-light.direction);
+
+    // ========== AMBIENT ==========
+    vec3 ambient = light.ambient * albedo;
+
+    // ========== DIFFUSE ==========
+    float diff = max(dot(normal, lightDir), 0.0);
+    vec3 diffuse = light.diffuse * diff * albedo;
+
+    // ========== SPECULAR ==========
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+    vec3 specular = light.specular * spec * specMap;
+
+    return ambient + diffuse + specular;
+}
+
+// ========== POINT LIGHT CALCULATION ==========
+// Point lights emit light in all directions from a position
+// Examples: Light bulb, Torch, Explosion
+vec3 CalcPointLight(Light light, vec3 normal, vec3 fragPos, vec3 viewDir, vec3 albedo, float specMap) {
+    // Direction from fragment to light
+    vec3 lightDir = normalize(light.position - fragPos);
+
+    // Distance for attenuation calculation
+    float distance = length(light.position - fragPos);
+    float attenuation = CalcAttenuation(light, distance);
+
+    // ========== AMBIENT ==========
+    vec3 ambient = light.ambient * albedo * attenuation;
+
+    // ========== DIFFUSE ==========
+    float diff = max(dot(normal, lightDir), 0.0);
+    vec3 diffuse = light.diffuse * diff * albedo * attenuation;
+
+    // ========== SPECULAR ==========
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+    vec3 specular = light.specular * spec * specMap * attenuation;
+
+    return ambient + diffuse + specular;
+}
+
+// ========== SPOT LIGHT CALCULATION ==========
+// Spot lights emit light in a cone from a position
+// Examples: Flashlight, Spotlight on stage
+vec3 CalcSpotLight(Light light, vec3 normal, vec3 fragPos, vec3 viewDir, vec3 albedo, float specMap) {
+    // Direction from fragment to light
+    vec3 lightDir = normalize(light.position - fragPos);
+
+    // Distance for attenuation
+    float distance = length(light.position - fragPos);
+    float attenuation = CalcAttenuation(light, distance);
+
+    // Check if fragment is within spotlight cone
+    float theta = dot(lightDir, normalize(-light.direction));
+    float epsilon = light.cutOff - light.outerCutOff;
+    float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
+
+    // ========== AMBIENT ==========
+    vec3 ambient = light.ambient * albedo * attenuation * intensity;
+
+    // ========== DIFFUSE ==========
+    float diff = max(dot(normal, lightDir), 0.0);
+    vec3 diffuse = light.diffuse * diff * albedo * attenuation * intensity;
+
+    // ========== SPECULAR ==========
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+    vec3 specular = light.specular * spec * specMap * attenuation * intensity;
+
+    return ambient + diffuse + specular;
+}
 
 // ========== MAIN FRAGMENT SHADER ==========
-// Calculates lighting for each pixel using Phong lighting model
 void main()
 {
     // ========== NORMAL MAPPING ==========
-    // Read the normal from the normal map or use the vertex normal
     vec3 norm;
     if(useNormalMap) {
-        // Sample normal from texture (range 0-1, need to convert to -1 to 1)
         norm = texture(normalMap, TexCoord).rgb;
-        // Convert from [0,1] to [-1,1]
-        norm = normalize(norm * 2.0 - 1.0);
-        // Transform from tangent space to world space using TBN matrix
-        norm = normalize(TBN * norm);
+        norm = normalize(norm * 2.0 - 1.0);  // Convert [0,1] to [-1,1]
+        norm = normalize(TBN * norm);        // Transform to world space
     } else {
-        // Use the interpolated vertex normal (already in world space)
         norm = normalize(Normal);
     }
 
     // ========== ALBEDO (BASE COLOR) ==========
-    // Get the base color from either texture or solid color
     vec3 albedo = useTexture ? texture(material.diffuse, TexCoord).rgb : objectColor;
 
-    // ========== LIGHTING COEFFICIENTS ==========
-    // These could be uniforms but are hardcoded for now
-    float ambientStrength = 0.1;      // How much ambient light affects the scene
-    float specularStrength = 0.5;     // How strong specular highlights are (deprecated, use texture)
+    // ========== SPECULAR MAP ==========
+    float specMap = texture(material.specular, TexCoord).r;
+
+    // ========== VIEW DIRECTION ==========
+    vec3 viewDir = normalize(viewPos - FragPos);
 
     // ========== INITIALIZE OUTPUT COLOR ==========
-    // Start with black, accumulate contribution from each light
     vec3 result = vec3(0.0);
 
     // ========== LOOP THROUGH ALL LIGHTS ==========
-    // Apply lighting from each active light source
     for (int i = 0; i < numLights; i++) {
-
-        // Calculate attenuation based on distance from light to fragment
-        float distance = length(lights[i].position - FragPos);
-
-        // Calculating attenuation factor using inverse quadratic formula
-        float attenuation = 1.0 / (lights[i].constant + lights[i].linear * distance + lights[i].quadratic * (distance * distance));
-
-        // Direction from fragment to light (normalized)
-        vec3 lightDir = normalize(lights[i].position - FragPos);
-
-        // Direction from fragment to camera/viewer (normalized)
-        vec3 viewDir  = normalize(viewPos - FragPos);
-
-        // Direction of reflected light (for specular calculations)
-        vec3 reflectDir = reflect(-lightDir, norm);
-
-        // ========== AMBIENT LIGHTING ==========
-        // Ambient light is constant in all directions
-        // Simulates indirect/bounced light that fills shadows
-        vec3 ambient = lights[i].ambient * albedo;
-
-        // ========== DIFFUSE LIGHTING ==========
-        // How much light is scattered in all directions
-        // Depends on angle between surface normal and light direction
-        float diff = max(dot(norm, lightDir), 0.0);  // Clamp to 0 (never negative)
-        vec3 diffuse = lights[i].diffuse * diff * albedo;
-
-        // ========== SPECULAR LIGHTING ==========
-        // Shiny highlights in the direction of reflected light
-        float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-        // Get specular strength from specular map texture
-        vec3 specMap = texture(material.specular, TexCoord).rgb;
-        vec3 specular = lights[i].specular * spec * specMap;
-
-        // ========== ACCUMULATE LIGHT CONTRIBUTION ==========
-        // Add this light's contribution to the final result
-        ambient *= attenuation;   // Apply attenuation to ambient (optional, can be constant)
-        diffuse *= attenuation;
-        specular *= attenuation;
-
-        result += ambient + diffuse + specular;
+        // Dispatch to appropriate lighting function based on light type
+        if (lights[i].type == LIGHT_DIRECTIONAL) {
+            result += CalcDirLight(lights[i], norm, viewDir, albedo, specMap);
+        }
+        else if (lights[i].type == LIGHT_POINT) {
+            result += CalcPointLight(lights[i], norm, FragPos, viewDir, albedo, specMap);
+        }
+        else if (lights[i].type == LIGHT_SPOT) {
+            result += CalcSpotLight(lights[i], norm, FragPos, viewDir, albedo, specMap);
+        }
     }
 
     // ========== OUTPUT FINAL COLOR ==========
-    // Set fragment color with full opacity (alpha = 1.0)
     FragColor = vec4(result, 1.0);
 }

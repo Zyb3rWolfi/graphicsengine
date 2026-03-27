@@ -33,6 +33,8 @@ add_executable(graphicsengine
         Engine/Utility/EngineTime.cpp
         Engine/Utility/ResourceManager.cpp
         Engine/Utility/ResourceManager.h
+        Engine/Scene/GameObject.cpp
+        Engine/Scene/GameObject.h
 
 )
 

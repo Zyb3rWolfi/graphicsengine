@@ -35,6 +35,7 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
 
         for (int i = 0; i < static_cast<int>(lights.size()); i++) {
             std::string base = "lights[" + std::to_string(i) + "]";
+            shader->setInt(base + ".type", (int)lights[i].LightType); // Assuming all are point lights for now
             shader->setVec3(base + ".position", lights[i].position);
             shader->setVec3(base + ".ambient", lights[i].ambient);
             shader->setVec3(base + ".diffuse", lights[i].diffuse);
@@ -42,6 +43,9 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
             shader->setFloat(base + ".constant", lights[i].constant);
             shader->setFloat(base + ".linear", lights[i].linear);
             shader->setFloat(base + ".quadratic", lights[i].quadratic);
+            shader->setFloat(base + ".cutOff", lights[i].cutOff);
+            shader->setFloat(base + ".outerCutOff", lights[i].outerCutOff);
+            shader->setVec3(base + ".direction", lights[i].direction);
         }
 
         // Set camera-related uniforms
