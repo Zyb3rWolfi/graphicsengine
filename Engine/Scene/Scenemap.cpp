@@ -10,8 +10,8 @@
 // ============================================================================
 
 // Update the constructor
-MeshNode::MeshNode(Mesh* m, Texture* t,Texture* st,Texture* et,Texture* nt, Shader* s, glm::vec3 pos, glm::vec3 rot, glm::vec3 scale)
-    : mesh(m), texture(t), SpecularTexture(st),EmissionTexture(et), shader(s), localPosition(pos), localRotation(rot), localScale(scale) {}
+MeshNode::MeshNode(Mesh&& m, Texture* t,Texture* st,Texture* et,Texture* nt, Shader* s, glm::vec3 pos, glm::vec3 rot, glm::vec3 scale)
+    : texture(t), EmissionTexture(et), NormalTexture(nt), mesh(std::move(m)), shader(s), SpecularTexture(st), localPosition(pos), localRotation(rot), localScale(scale) {}
 
 // Getting the local transform for the mesh node
 glm::mat4 MeshNode::GetLocalTransform() const {
@@ -43,8 +43,8 @@ glm::mat4 SceneNode::GetWorldTransform() const {
 }
 
 // Adding a child mesh with local transform
-void SceneNode::AddChildMesh(Mesh* mesh, Texture* texture,Texture* specularTexture,Texture* EmissionTexture, Texture* NormalTexture, Shader* shader, glm::vec3 localPos, glm::vec3 localRot, glm::vec3 localScale) {
-    childMeshes.emplace_back(mesh, texture,specularTexture,EmissionTexture,NormalTexture, shader, localPos, localRot, localScale);
+void SceneNode::AddChildMesh(Mesh&& mesh, Texture* texture,Texture* specularTexture,Texture* EmissionTexture, Texture* NormalTexture, Shader* shader, glm::vec3 localPos, glm::vec3 localRot, glm::vec3 localScale) {
+    childMeshes.emplace_back(std::move(mesh), texture,specularTexture,EmissionTexture,NormalTexture, shader, localPos, localRot, localScale);
 }
 
 // Adding a child node to the scene node

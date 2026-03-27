@@ -6,112 +6,186 @@
 #include "../Utility/EngineTime.h"
 #include "stb_image.h"
 #include "../Utility/ShapeFactory.h"
-#include "../Renderer/Shader.h"  // Add this
-#include "../Renderer/Mesh.h"    // Add this
+#include "../Renderer/Shader.h"
+#include "../Renderer/Mesh.h"
 #include "../Renderer/Texture.h"
 
+// ========== APPLICATION CLASS ==========
+// Application: Main engine class that manages the entire graphics engine
+// Responsible for:
+//   1. Window creation and GLFW/GLAD initialization
+//   2. Input handling and keyboard callbacks
+//   3. Scene setup and resource loading
+//   4. Main render loop
+// LINKS TO: All systems (renderer, scene, camera, input)
+
+// ========== CONSTRUCTOR ==========
+// Initializes application with given screen dimensions
+// Parameters:
+//   width - window width in pixels (e.g., 800)
+//   height - window height in pixels (e.g., 600)
+// Sets up:
+//   - Screen dimensions
+//   - Camera with default position (0, 0, 3) - looking at origin
+//   - Light sources that affect the scene
 Application::Application(unsigned int width, unsigned int height)
     : screenWidth(width), screenHeight(height), camera(glm::vec3(0.0f, 0.0f, 3.0f)) {
 
-    // Setup lights from your main.cpp
+    // Setup lights that will affect all meshes in the scene
+    // Each Light has a position, ambient/diffuse/specular colors
     lights = {
-        Light(glm::vec3(-2.0f, 1.0f, -1.0f)),
+        Light(glm::vec3(-2.0f, 1.0f, -1.0f)),  // Light positioned to the left and above
     };
 }
 
+// ========== INITIALIZATION FUNCTION ==========
+// Init: Sets up GLFW window, OpenGL context, and input system
+// Flow: Called once from main() before Run()
+// Returns: true if successful, false if initialization failed
 bool Application::Init() {
+    // Initialize GLFW library
     if (!glfwInit()) return false;
 
+    // Request OpenGL 3.3 Core Profile
+    // This is the modern way to use OpenGL (no deprecated functions)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-
+    // Create the window
+    // Parameters: width, height, title, monitor (NULL = windowed), share context (NULL)
     window = glfwCreateWindow(screenWidth, screenHeight, "Zyb3r Engine", NULL, NULL);
     if (!window) return false;
+
+    // Initialize input system with the newly created window
     Input::Initialize(window);
 
+    // Make the OpenGL context current for this thread
     glfwMakeContextCurrent(window);
 
+    // ========== INPUT MAPPING ==========
+    // Map keyboard keys to action names so we can check actions rather than specific keys
+    // This allows multiple keys to trigger the same action (e.g., W or Up arrow = MoveForward)
     Input::MapAction("MoveForward", GLFW_KEY_W);
-    Input::MapAction("MoveForward", GLFW_KEY_UP); // Multiple keys for one action
-    Input::MapAction("MoveLeft",    GLFW_KEY_A);;
-    Input::MapAction("MoveRight",  GLFW_KEY_D);
+    Input::MapAction("MoveForward", GLFW_KEY_UP);     // Multiple keys for one action
+    Input::MapAction("MoveLeft",    GLFW_KEY_A);
+    Input::MapAction("MoveRight",   GLFW_KEY_D);
     Input::MapAction("MoveBack",    GLFW_KEY_S);
     Input::MapAction("Quit",        GLFW_KEY_ESCAPE);
 
-    // Register this class instance with the window so callbacks can access it
+    // Register this Application instance with GLFW callbacks
+    // This allows static callback functions to access the Application instance
     glfwSetWindowUserPointer(window, this);
-    glfwSetFramebufferSizeCallback(window, Application::FramebufferSizeCallback);
-    glfwSetCursorPosCallback(window, Application::MouseCallback);
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetFramebufferSizeCallback(window, Application::FramebufferSizeCallback);  // Window resize
+    glfwSetCursorPosCallback(window, Application::MouseCallback);                   // Mouse movement
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);                   // Hide cursor
 
+    // Load OpenGL function pointers using GLAD
+    // This initializes all OpenGL function pointers for the current OpenGL version
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) return false;
 
+    // Enable depth testing for 3D rendering
+    // This ensures closer objects render in front of farther ones
     glEnable(GL_DEPTH_TEST);
     return true;
 }
 
+// ========== MAIN GAME LOOP ==========
+// Run: The main application loop - runs until window closes
+// Flow: Called once from main() after Init()
+// Sequence each frame:
+//   1. ProcessInput() - handle keyboard/mouse input
+//   2. Update() - update game logic (animations, transforms)
+//   3. Render() - render the scene to the screen
+//   4. glfwSwapBuffers() - display the rendered frame
+//   5. glfwPollEvents() - process OS events
 void Application::Run() {
     EngineTime::Update();
 
-
+    // ========== SCENE SETUP ==========
     ShapeFactory factory;
-    // Loading resources moved from your main.cpp
-    //ResourceManager::LoadShader("Shaders/shader.vert", "VertShader");
 
-    ResourceManager::LoadShader("Shaders/shader.vert", "Shaders/shader.frag", "MainShader");
-    ResourceManager::LoadShader("Shaders/sourceShader.vert", "Shaders/sourceShader.frag", "LightShader");
+    // Load shader programs from disk
+    // Each shader consists of vertex and fragment shader source files
+    // Shaders are registered by name for later retrieval and use
+    ResourceManager::LoadShader("Shaders/shader.vert", "Shaders/shader.frag", "MainShader");     // Main lighting shader
+    ResourceManager::LoadShader("Shaders/sourceShader.vert", "Shaders/sourceShader.frag", "LightShader");  // Light source shader
 
+    // Create two cube meshes using ShapeFactory
+    // These are raw GPU geometry - they're moved into the scene graph next
     Mesh cubeMain = factory.CreateCube();
     Mesh cubeLight = factory.CreateCube();
 
-    cubeMain.objectColor = glm::vec3(0.0f, 1.0f, 0.0f);
-    cubeMain.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
-    cubeMain.shininess = 32.0f;
-    cubeMain.ambient = glm::vec3(0.2f, 0.2f, 0.2f);
-    cubeMain.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);
-    cubeMain.specular = glm::vec3(1.0f, 1.0f, 1.0f);
+    // ========== CONFIGURE MAIN CUBE ==========
+    // Set material properties for the first cube
+    cubeMain.objectColor = glm::vec3(0.0f, 1.0f, 0.0f);  // Green base color
+    cubeMain.lightColor = glm::vec3(1.0f, 1.0f, 1.0f);   // White light (unused mostly)
+    cubeMain.shininess = 32.0f;                          // Moderate shininess
+    cubeMain.ambient = glm::vec3(0.2f, 0.2f, 0.2f);      // Low ambient = dark in shadows
+    cubeMain.diffuse = glm::vec3(0.8f, 0.9f, 0.8f);      // Light diffuse = bright scattered light
+    cubeMain.specular = glm::vec3(1.0f, 1.0f, 1.0f);     // Full white specular = shiny highlights
 
-    ResourceManager::LoadTexture("Images/container2.png", "container_map");
-    ResourceManager::LoadTexture("Images/container2_specular.png", "container_specular");
-    Texture diff("Images/container2.png");
-    Texture spec("Images/container2_specular.png");
+    // ========== LOAD TEXTURES ==========
+    // Load texture files into ResourceManager for use on meshes
+    ResourceManager::LoadTexture("Images/wall/default.jpg", "wall_map");    // Diffuse/color texture
+    ResourceManager::LoadTexture("Images/wall/normal.jpg", "wall_normal");  // Normal map for surface detail
 
+    // ========== BUILD SCENE GRAPH ==========
+    // Create root node at origin (0, 0, 0)
+    // The scene graph organizes meshes hierarchically
     auto root = scene.AddRootNode(glm::vec3(0.0f));
 
-    root->AddChildMesh(&cubeMain,
-        ResourceManager::GetTexture("container_map"),
-        ResourceManager::GetTexture("container_specular"),
-        nullptr,
-        nullptr,
-        ResourceManager::GetShader("MainShader"),
-        glm::vec3(2.0f, 0.0f, 0.0f));
+    // Add the main cube as a child of root
+    // std::move() transfers ownership of the mesh to the scene graph
+    // Parameters specify: mesh, diffuse texture, specular texture (nullptr), emission texture (nullptr), normal texture, shader, local position
+    root->AddChildMesh(std::move(cubeMain),
+        ResourceManager::GetTexture("wall_map"),    // Use the wood texture
+        nullptr,                                     // No specular map
+        nullptr,                                     // No emission
+        ResourceManager::GetTexture("wall_normal"),  // Use normal map for surface detail
+        ResourceManager::GetShader("MainShader"),    // Use main lighting shader
+        glm::vec3(2.0f, 0.0f, 0.0f));                // Position at (2, 0, 0) in root space
 
-    root->AddChildMesh(&cubeLight,
-        nullptr,
-        nullptr,
-        nullptr,
-        nullptr,
-        ResourceManager::GetShader("LightShader"),
-        glm::vec3(-2.0f, 1.0f, -1.0f));
+    // Add the light cube as a child of root
+    // Light cubes are typically rendered with a simple emissive shader to show where light is
+    root->AddChildMesh(std::move(cubeLight),
+        nullptr,  // No texture
+        nullptr,  // No specular
+        nullptr,  // No emission
+        nullptr,  // No normal map
+        ResourceManager::GetShader("LightShader"),   // Use simple light shader
+        glm::vec3(-2.0f, 1.0f, -1.0f));              // Position at (-2, 1, -1)
 
+    // ========== MAIN RENDER LOOP ==========
+    // Runs until window close is requested
     while (!glfwWindowShouldClose(window)) {
+        // Get elapsed time since last frame
         float dt = EngineTime::GetDeltaTime();
 
+        // Handle keyboard/mouse input
         ProcessInput(dt);
+
+        // Update game state (animations, positions, etc.)
         Update(dt);
+
+        // Render the scene
         Render();
 
+        // Display the rendered frame (double buffering: swap front and back buffers)
         glfwSwapBuffers(window);
+
+        // Process OS events (keyboard, mouse, window messages)
         glfwPollEvents();
     }
 }
 
+// ========== INPUT PROCESSING ==========
+// ProcessInput: Handles user input (keyboard/mouse)
+// Parameters:
+//   dt - delta time since last frame (for frame-rate independent movement)
+// Flow: Called once per frame before rendering
 void Application::ProcessInput(float dt) {
-
-    // Keeping movement simple as requested
-
+    // Check if quit action is active (ESC key)
     if (Input::IsActionActive("Quit")) {
         glfwSetWindowShouldClose(window, true);
     }

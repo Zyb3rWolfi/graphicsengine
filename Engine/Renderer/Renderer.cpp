@@ -43,7 +43,7 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
 
         // Set camera-related uniforms
         shader->setVec3("viewPos", camera.position);
-        shader->setVec3("objectColor", meshNode.mesh->objectColor);
+        shader->setVec3("objectColor", meshNode.mesh.objectColor);
         shader->setVec3("lightColor", vec3(1.0f));
         shader->setMat4("view", camera.GetViewMatrix());
         shader->setMat4("projection", camera.GetProjectionMatrix());
@@ -54,9 +54,9 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
         // 3 - Set the final transform in the shader and draw the mesh
         shader->setMat4("model", finalTransform);
 
-        shader->setVec3("material.ambient", meshNode.mesh->ambient);
+        shader->setVec3("material.ambient", meshNode.mesh.ambient);
         shader->setInt("material.diffuse", 0);
-        shader->setFloat("material.shininess", meshNode.mesh->shininess);
+        shader->setFloat("material.shininess", meshNode.mesh.shininess);
 
         glm::mat3 normalMatrix = glm::transpose(glm::inverse(glm::mat3(finalTransform)));
         shader->setMat3("normalMatrix", normalMatrix);
@@ -95,7 +95,7 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
             shader->setBool("useTexture", false);
         }
 
-        meshNode.mesh->Draw();
+        meshNode.mesh.Draw();
     }
 
     for (auto &childNode: node->GetChildNodes()) {

@@ -48,7 +48,8 @@ unsigned int Shader::Compile(const char *Code, GLenum type) {
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(shader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED" << std::endl;
+        std::string typeStr = (type == GL_VERTEX_SHADER) ? "VERTEX" : "FRAGMENT";
+        std::cout << "ERROR::SHADER::" << typeStr << "::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
     return shader;
 }
@@ -58,6 +59,8 @@ unsigned int Shader::Compile(const char *Code, GLenum type) {
 std::string Shader::Get(const char *path) {
     std::string ShaderCode;
     std::ifstream ShaderFile;
+
+    std::cout << "Attempting to load shader from: " << path << std::endl;
 
     ShaderFile.exceptions(std::ifstream::badbit);
     try {
@@ -71,12 +74,13 @@ std::string Shader::Get(const char *path) {
         // convert stream into string
         ShaderCode = vShaderStream.str();
 
+        std::cout << "Successfully loaded shader, size: " << ShaderCode.length() << " bytes" << std::endl;
         return ShaderCode;
 
     } catch (std::ifstream::failure &e) {
-        std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << std::endl;
+        std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ: " << path << std::endl;
     }
-
+    return "";
 }
 
 void Shader::use() {
