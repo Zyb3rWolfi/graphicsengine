@@ -31,8 +31,6 @@
 Application::Application(unsigned int width, unsigned int height)
     : screenWidth(width), screenHeight(height), camera(glm::vec3(0.0f, 0.0f, 3.0f)) {
 
-    // Setup lights that will affect all meshes in the scene
-    // Each Light has a position, ambient/diffuse/specular colors
     lights = {
         Light(glm::vec3(-2.0f, 1.0f, -1.0f)),  // Light positioned to the left and above
     };
@@ -47,7 +45,6 @@ bool Application::Init() {
     if (!glfwInit()) return false;
 
     // Request OpenGL 3.3 Core Profile
-    // This is the modern way to use OpenGL (no deprecated functions)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -65,7 +62,6 @@ bool Application::Init() {
 
     // ========== INPUT MAPPING ==========
     // Map keyboard keys to action names so we can check actions rather than specific keys
-    // This allows multiple keys to trigger the same action (e.g., W or Up arrow = MoveForward)
     Input::MapAction("MoveForward", GLFW_KEY_W);
     Input::MapAction("MoveForward", GLFW_KEY_UP);     // Multiple keys for one action
     Input::MapAction("MoveLeft",    GLFW_KEY_A);
@@ -135,9 +131,6 @@ void Application::Run() {
     // The scene graph organizes meshes hierarchically
     auto root = scene.AddRootNode(glm::vec3(0.0f));
 
-    // Add the main cube as a child of root
-    // std::move() transfers ownership of the mesh to the scene graph
-    // Parameters specify: mesh, diffuse texture, specular texture (nullptr), emission texture (nullptr), normal texture, shader, local position
     root->AddChildMesh(std::move(cubeMain),
         ResourceManager::GetTexture("wall_map"),    // Use the wood texture
         nullptr,                                     // No specular map
@@ -146,8 +139,6 @@ void Application::Run() {
         ResourceManager::GetShader("MainShader"),    // Use main lighting shader
         glm::vec3(2.0f, 0.0f, 0.0f));                // Position at (2, 0, 0) in root space
 
-    // Add the light cube as a child of root
-    // Light cubes are typically rendered with a simple emissive shader to show where light is
     root->AddChildMesh(std::move(cubeLight),
         nullptr,  // No texture
         nullptr,  // No specular
@@ -160,6 +151,7 @@ void Application::Run() {
     // Runs until window close is requested
     while (!glfwWindowShouldClose(window)) {
         // Get elapsed time since last frame
+        EngineTime::Update();
         float dt = EngineTime::GetDeltaTime();
 
         // Handle keyboard/mouse input

@@ -1,37 +1,5 @@
 #version 330 core
 #define MAX_LIGHTS 8
-out vec4 FragColor;
-
-in vec3 ourColor;
-in vec2 TexCoord;
-in vec3 Normal;
-in vec3 FragPos;
-in mat3 TBN;
-
-uniform sampler2D ourTexture;
-uniform vec3 objectColor;
-uniform vec3 viewPos;
-uniform bool useTexture;
-uniform int numLights;
-uniform bool useNormalMap;
-uniform sampler2D normalMap;
-
-struct Light {
-    vec3 position;
-    vec3 ambient;
-    vec3 diffuse;
-    vec3 specular;
-};
-
-struct Material {
-    vec3 ambient;
-    sampler2D diffuse;
-    sampler2D specular;
-    float shininess;
-};
-
-uniform Light lights[MAX_LIGHTS];
-uniform Material material;
 
 
 // shader.frag - Fragment Shader
@@ -73,6 +41,9 @@ struct Light {
     vec3 ambient;       // Ambient color/intensity (light in all directions)
     vec3 diffuse;       // Diffuse color/intensity (direct scattered light)
     vec3 specular;      // Specular color/intensity (shiny highlights)
+    float constant;      // Attenuation constant term
+    float linear;        // Attenuation linear term
+    float quadratic;     // Attenuation quadratic term
 };
 
 // ========== MATERIAL STRUCTURE ==========
@@ -123,6 +94,13 @@ void main()
     // ========== LOOP THROUGH ALL LIGHTS ==========
     // Apply lighting from each active light source
     for (int i = 0; i < numLights; i++) {
+
+        // Calculate attenuation based on distance from light to fragment
+        float distance = length(lights[i].position - FragPos);
+
+        // Calculating attenuation factor using inverse quadratic formula
+        float attenuation = 1.0 / (lights[i].constant + lights[i].linear * distance + lights[i].quadratic * (distance * distance));
+
         // Direction from fragment to light (normalized)
         vec3 lightDir = normalize(lights[i].position - FragPos);
 
@@ -152,6 +130,10 @@ void main()
 
         // ========== ACCUMULATE LIGHT CONTRIBUTION ==========
         // Add this light's contribution to the final result
+        ambient *= attenuation;   // Apply attenuation to ambient (optional, can be constant)
+        diffuse *= attenuation;
+        specular *= attenuation;
+
         result += ambient + diffuse + specular;
     }
 

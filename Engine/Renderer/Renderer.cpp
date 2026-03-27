@@ -39,6 +39,9 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
             shader->setVec3(base + ".ambient", lights[i].ambient);
             shader->setVec3(base + ".diffuse", lights[i].diffuse);
             shader->setVec3(base + ".specular", lights[i].specular);
+            shader->setFloat(base + ".constant", lights[i].constant);
+            shader->setFloat(base + ".linear", lights[i].linear);
+            shader->setFloat(base + ".quadratic", lights[i].quadratic);
         }
 
         // Set camera-related uniforms
