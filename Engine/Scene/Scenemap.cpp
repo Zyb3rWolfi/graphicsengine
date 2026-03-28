@@ -47,10 +47,23 @@ void SceneNode::AddChildMesh(Mesh&& mesh, Texture* texture,Texture* specularText
     childMeshes.emplace_back(std::move(mesh), texture,specularTexture,EmissionTexture,NormalTexture, shader, localPos, localRot, localScale);
 }
 
+void SceneNode::Delete(const std::shared_ptr<SceneNode>& node, Scenemap& scenemap) {
+    if (node->parent) {
+        node->parent->RemoveChildNode(node);
+    } else {
+        // If it's a root node, we need to find and remove it from the scenemap
+        // This requires access to the scenemap, which is not ideal. Consider refactoring for better design.
+        scenemap.RemoveRootNode(node);
+
+    }
+}
+
 // Adding a child node to the scene node
 void SceneNode::AddChildNode(const std::shared_ptr<SceneNode>& node) {
+    node->parent = this; // Set parent reference in the child node
     childNodes.push_back(node);
 }
+
 
 // Getting child meshes
 std::vector<MeshNode>& SceneNode::GetChildMeshes() {
@@ -68,6 +81,7 @@ void SceneNode::RemoveChildMesh(size_t index) {
         childMeshes.erase(childMeshes.begin() + static_cast<std::vector<MeshNode>::difference_type>(index));
     }
 }
+
 
 void SceneNode::SetPosition(glm::vec3 pos) {
     worldPosition = pos;
@@ -105,6 +119,16 @@ void SceneNode::Scale(glm::vec3 scale) {
     worldScale *= scale;
 }
 
+void SceneNode::RemoveChildNode(std::shared_ptr<SceneNode> node) {
+    auto it = std::find(childNodes.begin(), childNodes.end(), node);
+    if (it != childNodes.end()) {
+        childNodes.erase(it);
+        node->parent = nullptr; // Optional: Clear parent reference in the child node
+    }
+
+}
+
+
 // ============================================================================
 // Scenemap Implementation
 // ============================================================================
@@ -119,11 +143,9 @@ std::vector<std::shared_ptr<SceneNode>>& Scenemap::GetRootNodes() {
     return rootNodes;
 }
 
-void Scenemap::RemoveRootNode(size_t index) {
-    if (index < rootNodes.size()) {
-        rootNodes.erase(rootNodes.begin() + static_cast<std::vector<std::shared_ptr<SceneNode>>::difference_type>(index));
-    }
-}
+void Scenemap::RemoveRootNode(std::shared_ptr<SceneNode> node) {
+    // Standard C++ idiom to remove a specific element from a vector
+    rootNodes.erase(std::remove(rootNodes.begin(), rootNodes.end(), node), rootNodes.end());}
 
 void Scenemap::Clear() {
     rootNodes.clear();

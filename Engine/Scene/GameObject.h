@@ -8,6 +8,7 @@
 #include <string>
 #include <glm/glm.hpp>
 
+class Scenemap;
 // Forward declarations
 class SceneNode;
 class Texture;
@@ -30,8 +31,10 @@ public:
     std::shared_ptr<SceneNode> node;
 
     // Factory method
+    static shared_ptr<GameObject> Create(const string& name, Scenemap *scene = nullptr);
     static shared_ptr<GameObject> CreateCube(const string& name);
     static shared_ptr<GameObject> CreateQuad(const string& name);
+    static shared_ptr<GameObject> CreatePointLight(const string& name, Scenemap *scene = nullptr, const std::shared_ptr<SceneNode>& parent = nullptr);
 
     // Material/Texture setters
     void SetTexture(Texture* texture);

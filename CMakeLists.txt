@@ -65,6 +65,8 @@ add_executable(graphicsengine
         Engine/Utility/ResourceManager.h
         Engine/UI/Panel.cpp
         Engine/UI/Panel.h
+        Engine/Utility/Helper.cpp
+        Engine/Utility/Helper.h
 )
 
 # 2. Add include paths

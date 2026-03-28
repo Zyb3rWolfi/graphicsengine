@@ -25,7 +25,7 @@ public:
     //       1. Iterates through all root nodes
     //       2. Calls RenderNode for each with identity matrix
     //       3. RenderNode recursively renders children
-    void Draw(Scenemap &scene, Camera &camera, std::vector<Light> &lights);
+    void Draw(Scenemap &scene, Camera &camera);
 
 private:
     // ========== RECURSIVE RENDERING FUNCTION ==========
@@ -51,6 +51,8 @@ private:
     // Flow: Called by Draw() for root nodes, then recursively for children
     void RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat4 &parentTransform, Camera &camera,
                     std::vector<Light> &lights);
+
+    void GatherLights(const std::shared_ptr<SceneNode> &node, std::vector<Light> &lightList);
 };
 
 

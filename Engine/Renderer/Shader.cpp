@@ -6,7 +6,9 @@
 
 #include <glm/gtc/type_ptr.hpp>
 
-    Shader::Shader(const char* vertexPath, const char* fragmentPath) {
+#include "Helper.h"
+
+Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     // Use your new Get() helper for both
     std::string vCodeStr = Get(vertexPath);
     std::string fCodeStr = Get(fragmentPath);
@@ -28,6 +30,7 @@
     if (!success) {
         glGetProgramInfoLog(ID, 512, NULL, infoLog);
         std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+        Helper::Log("Shader linking failed for program ID: " + std::to_string(ID) + "\nError Log: " + infoLog, LogLevel::ERROR);
     }
 
     // Clean up individual stages
@@ -50,6 +53,7 @@ unsigned int Shader::Compile(const char *Code, GLenum type) {
         glGetShaderInfoLog(shader, 512, NULL, infoLog);
         std::string typeStr = (type == GL_VERTEX_SHADER) ? "VERTEX" : "FRAGMENT";
         std::cout << "ERROR::SHADER::" << typeStr << "::COMPILATION_FAILED\n" << infoLog << std::endl;
+        Helper::Log("Shader compilation failed for " + typeStr + " shader.\nError Log: " + infoLog, LogLevel::ERROR);
     }
     return shader;
 }
@@ -61,6 +65,7 @@ std::string Shader::Get(const char *path) {
     std::ifstream ShaderFile;
 
     std::cout << "Attempting to load shader from: " << path << std::endl;
+    Helper::Log("Loading shader from: " + std::string(path), LogLevel::INFO);
 
     ShaderFile.exceptions(std::ifstream::badbit);
     try {
@@ -75,10 +80,12 @@ std::string Shader::Get(const char *path) {
         ShaderCode = vShaderStream.str();
 
         std::cout << "Successfully loaded shader, size: " << ShaderCode.length() << " bytes" << std::endl;
+        Helper::Log("Successfully loaded shader: " + std::string(path) + ", size: " + std::to_string(ShaderCode.length()) + " bytes", LogLevel::INFO);
         return ShaderCode;
 
     } catch (std::ifstream::failure &e) {
         std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ: " << path << std::endl;
+        Helper::Log("Failed to read shader file: " + std::string(path) + "\nException: " + e.what(), LogLevel::ERROR);
     }
     return "";
 }

@@ -10,6 +10,8 @@
 #include "../Renderer/Texture.h"
 #include <memory>
 
+#include "Light.h"
+
 // ========== CONSTRUCTOR ==========
 GameObject::GameObject() : name(""), node(nullptr) {
     node = std::make_shared<SceneNode>();
@@ -59,6 +61,51 @@ shared_ptr<GameObject> GameObject::CreateQuad(const string& name) {
 
     return gameObject;
 }
+
+shared_ptr<GameObject> GameObject::Create(const string &name, Scenemap *scene) {
+    auto gameObject = make_shared<GameObject>();
+    gameObject->name = name;
+    gameObject->node->gameObject = gameObject;
+    if (scene) {
+        scene->GetRootNodes().push_back(gameObject->node);
+    }
+    return gameObject;
+}
+
+shared_ptr<GameObject> GameObject::CreatePointLight(const string &name, Scenemap *scene, const std::shared_ptr<SceneNode>& parent ) {
+    auto lightObject = make_shared<GameObject>();
+
+    lightObject->name = name;
+    lightObject->node->gameObject = lightObject;
+    lightObject->node->light = make_shared<Light>();
+    lightObject->node->light->LightType = LightType::POINT;
+    lightObject->node->light->position = glm::vec3(-2.0f, 1.0f, -1.0f);
+    lightObject->node->light->ambient = glm::vec3(0.05f, 0.05f, 0.05f);
+    lightObject->node->light->diffuse = glm::vec3(0.8f, 0.7f, 0.5f);
+    lightObject->node->light->specular = glm::vec3(1.0f, 1.0f, 0.8f);
+    // Attenuation for ~50 unit range
+    lightObject->node->light->constant = 1.0f;
+    lightObject->node->light->linear = 0.09f;
+    lightObject->node->light->quadratic = 0.032f;
+    if (parent) {
+        parent->AddChildNode(lightObject->node);
+    } else {
+        scene->GetRootNodes().push_back(lightObject->node);
+    }
+    lightObject->node->AddChildMesh(std::move(ShapeFactory().CreateCube()),
+            nullptr,  // texture
+            nullptr,  // specularTexture
+            nullptr,  // emissionTexture
+            nullptr,  // normalTexture
+            nullptr,  // shader
+            glm::vec3(0.0f),  // position
+            glm::vec3(0.0f),  // rotation
+            glm::vec3(1.0f)   // scale
+        );
+    return lightObject;
+}
+
+
 
 // ========== MATERIAL: SET TEXTURE ==========
 void GameObject::SetTexture(Texture* texture) {

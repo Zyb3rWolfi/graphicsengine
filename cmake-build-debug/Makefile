@@ -286,6 +286,30 @@ Engine\Scene\Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Scene\Camera.cpp.s
 .PHONY : Engine\Scene\Camera.cpp.s
 
+Engine\Scene\GameObject.obj: Engine\Scene\GameObject.cpp.obj
+.PHONY : Engine\Scene\GameObject.obj
+
+# target to build an object file
+Engine\Scene\GameObject.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Scene\GameObject.cpp.obj
+.PHONY : Engine\Scene\GameObject.cpp.obj
+
+Engine\Scene\GameObject.i: Engine\Scene\GameObject.cpp.i
+.PHONY : Engine\Scene\GameObject.i
+
+# target to preprocess a source file
+Engine\Scene\GameObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Scene\GameObject.cpp.i
+.PHONY : Engine\Scene\GameObject.cpp.i
+
+Engine\Scene\GameObject.s: Engine\Scene\GameObject.cpp.s
+.PHONY : Engine\Scene\GameObject.s
+
+# target to generate assembly for a file
+Engine\Scene\GameObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Scene\GameObject.cpp.s
+.PHONY : Engine\Scene\GameObject.cpp.s
+
 Engine\Scene\Scenemap.obj: Engine\Scene\Scenemap.cpp.obj
 .PHONY : Engine\Scene\Scenemap.obj
 
@@ -310,6 +334,30 @@ Engine\Scene\Scenemap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Scene\Scenemap.cpp.s
 .PHONY : Engine\Scene\Scenemap.cpp.s
 
+Engine\UI\Panel.obj: Engine\UI\Panel.cpp.obj
+.PHONY : Engine\UI\Panel.obj
+
+# target to build an object file
+Engine\UI\Panel.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\UI\Panel.cpp.obj
+.PHONY : Engine\UI\Panel.cpp.obj
+
+Engine\UI\Panel.i: Engine\UI\Panel.cpp.i
+.PHONY : Engine\UI\Panel.i
+
+# target to preprocess a source file
+Engine\UI\Panel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\UI\Panel.cpp.i
+.PHONY : Engine\UI\Panel.cpp.i
+
+Engine\UI\Panel.s: Engine\UI\Panel.cpp.s
+.PHONY : Engine\UI\Panel.s
+
+# target to generate assembly for a file
+Engine\UI\Panel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\UI\Panel.cpp.s
+.PHONY : Engine\UI\Panel.cpp.s
+
 Engine\Utility\EngineTime.obj: Engine\Utility\EngineTime.cpp.obj
 .PHONY : Engine\Utility\EngineTime.obj
 
@@ -333,6 +381,30 @@ Engine\Utility\EngineTime.s: Engine\Utility\EngineTime.cpp.s
 Engine\Utility\EngineTime.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\EngineTime.cpp.s
 .PHONY : Engine\Utility\EngineTime.cpp.s
+
+Engine\Utility\Helper.obj: Engine\Utility\Helper.cpp.obj
+.PHONY : Engine\Utility\Helper.obj
+
+# target to build an object file
+Engine\Utility\Helper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\Helper.cpp.obj
+.PHONY : Engine\Utility\Helper.cpp.obj
+
+Engine\Utility\Helper.i: Engine\Utility\Helper.cpp.i
+.PHONY : Engine\Utility\Helper.i
+
+# target to preprocess a source file
+Engine\Utility\Helper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\Helper.cpp.i
+.PHONY : Engine\Utility\Helper.cpp.i
+
+Engine\Utility\Helper.s: Engine\Utility\Helper.cpp.s
+.PHONY : Engine\Utility\Helper.s
+
+# target to generate assembly for a file
+Engine\Utility\Helper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\Helper.cpp.s
+.PHONY : Engine\Utility\Helper.cpp.s
 
 Engine\Utility\Input.obj: Engine\Utility\Input.cpp.obj
 .PHONY : Engine\Utility\Input.obj
@@ -430,6 +502,150 @@ Engine\Utility\stb_impl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\Engine\Utility\stb_impl.cpp.s
 .PHONY : Engine\Utility\stb_impl.cpp.s
 
+_deps\imgui-src\backends\imgui_impl_glfw.obj: _deps\imgui-src\backends\imgui_impl_glfw.cpp.obj
+.PHONY : _deps\imgui-src\backends\imgui_impl_glfw.obj
+
+# target to build an object file
+_deps\imgui-src\backends\imgui_impl_glfw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\backends\imgui_impl_glfw.cpp.obj
+.PHONY : _deps\imgui-src\backends\imgui_impl_glfw.cpp.obj
+
+_deps\imgui-src\backends\imgui_impl_glfw.i: _deps\imgui-src\backends\imgui_impl_glfw.cpp.i
+.PHONY : _deps\imgui-src\backends\imgui_impl_glfw.i
+
+# target to preprocess a source file
+_deps\imgui-src\backends\imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\backends\imgui_impl_glfw.cpp.i
+.PHONY : _deps\imgui-src\backends\imgui_impl_glfw.cpp.i
+
+_deps\imgui-src\backends\imgui_impl_glfw.s: _deps\imgui-src\backends\imgui_impl_glfw.cpp.s
+.PHONY : _deps\imgui-src\backends\imgui_impl_glfw.s
+
+# target to generate assembly for a file
+_deps\imgui-src\backends\imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\backends\imgui_impl_glfw.cpp.s
+.PHONY : _deps\imgui-src\backends\imgui_impl_glfw.cpp.s
+
+_deps\imgui-src\backends\imgui_impl_opengl3.obj: _deps\imgui-src\backends\imgui_impl_opengl3.cpp.obj
+.PHONY : _deps\imgui-src\backends\imgui_impl_opengl3.obj
+
+# target to build an object file
+_deps\imgui-src\backends\imgui_impl_opengl3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\backends\imgui_impl_opengl3.cpp.obj
+.PHONY : _deps\imgui-src\backends\imgui_impl_opengl3.cpp.obj
+
+_deps\imgui-src\backends\imgui_impl_opengl3.i: _deps\imgui-src\backends\imgui_impl_opengl3.cpp.i
+.PHONY : _deps\imgui-src\backends\imgui_impl_opengl3.i
+
+# target to preprocess a source file
+_deps\imgui-src\backends\imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\backends\imgui_impl_opengl3.cpp.i
+.PHONY : _deps\imgui-src\backends\imgui_impl_opengl3.cpp.i
+
+_deps\imgui-src\backends\imgui_impl_opengl3.s: _deps\imgui-src\backends\imgui_impl_opengl3.cpp.s
+.PHONY : _deps\imgui-src\backends\imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+_deps\imgui-src\backends\imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\backends\imgui_impl_opengl3.cpp.s
+.PHONY : _deps\imgui-src\backends\imgui_impl_opengl3.cpp.s
+
+_deps\imgui-src\imgui.obj: _deps\imgui-src\imgui.cpp.obj
+.PHONY : _deps\imgui-src\imgui.obj
+
+# target to build an object file
+_deps\imgui-src\imgui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui.cpp.obj
+.PHONY : _deps\imgui-src\imgui.cpp.obj
+
+_deps\imgui-src\imgui.i: _deps\imgui-src\imgui.cpp.i
+.PHONY : _deps\imgui-src\imgui.i
+
+# target to preprocess a source file
+_deps\imgui-src\imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui.cpp.i
+.PHONY : _deps\imgui-src\imgui.cpp.i
+
+_deps\imgui-src\imgui.s: _deps\imgui-src\imgui.cpp.s
+.PHONY : _deps\imgui-src\imgui.s
+
+# target to generate assembly for a file
+_deps\imgui-src\imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui.cpp.s
+.PHONY : _deps\imgui-src\imgui.cpp.s
+
+_deps\imgui-src\imgui_draw.obj: _deps\imgui-src\imgui_draw.cpp.obj
+.PHONY : _deps\imgui-src\imgui_draw.obj
+
+# target to build an object file
+_deps\imgui-src\imgui_draw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_draw.cpp.obj
+.PHONY : _deps\imgui-src\imgui_draw.cpp.obj
+
+_deps\imgui-src\imgui_draw.i: _deps\imgui-src\imgui_draw.cpp.i
+.PHONY : _deps\imgui-src\imgui_draw.i
+
+# target to preprocess a source file
+_deps\imgui-src\imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_draw.cpp.i
+.PHONY : _deps\imgui-src\imgui_draw.cpp.i
+
+_deps\imgui-src\imgui_draw.s: _deps\imgui-src\imgui_draw.cpp.s
+.PHONY : _deps\imgui-src\imgui_draw.s
+
+# target to generate assembly for a file
+_deps\imgui-src\imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_draw.cpp.s
+.PHONY : _deps\imgui-src\imgui_draw.cpp.s
+
+_deps\imgui-src\imgui_tables.obj: _deps\imgui-src\imgui_tables.cpp.obj
+.PHONY : _deps\imgui-src\imgui_tables.obj
+
+# target to build an object file
+_deps\imgui-src\imgui_tables.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_tables.cpp.obj
+.PHONY : _deps\imgui-src\imgui_tables.cpp.obj
+
+_deps\imgui-src\imgui_tables.i: _deps\imgui-src\imgui_tables.cpp.i
+.PHONY : _deps\imgui-src\imgui_tables.i
+
+# target to preprocess a source file
+_deps\imgui-src\imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_tables.cpp.i
+.PHONY : _deps\imgui-src\imgui_tables.cpp.i
+
+_deps\imgui-src\imgui_tables.s: _deps\imgui-src\imgui_tables.cpp.s
+.PHONY : _deps\imgui-src\imgui_tables.s
+
+# target to generate assembly for a file
+_deps\imgui-src\imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_tables.cpp.s
+.PHONY : _deps\imgui-src\imgui_tables.cpp.s
+
+_deps\imgui-src\imgui_widgets.obj: _deps\imgui-src\imgui_widgets.cpp.obj
+.PHONY : _deps\imgui-src\imgui_widgets.obj
+
+# target to build an object file
+_deps\imgui-src\imgui_widgets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_widgets.cpp.obj
+.PHONY : _deps\imgui-src\imgui_widgets.cpp.obj
+
+_deps\imgui-src\imgui_widgets.i: _deps\imgui-src\imgui_widgets.cpp.i
+.PHONY : _deps\imgui-src\imgui_widgets.i
+
+# target to preprocess a source file
+_deps\imgui-src\imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_widgets.cpp.i
+.PHONY : _deps\imgui-src\imgui_widgets.cpp.i
+
+_deps\imgui-src\imgui_widgets.s: _deps\imgui-src\imgui_widgets.cpp.s
+.PHONY : _deps\imgui-src\imgui_widgets.s
+
+# target to generate assembly for a file
+_deps\imgui-src\imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graphicsengine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graphicsengine.dir\_deps\imgui-src\imgui_widgets.cpp.s
+.PHONY : _deps\imgui-src\imgui_widgets.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -484,12 +700,21 @@ help:
 	@echo ... Engine/Scene/Camera.obj
 	@echo ... Engine/Scene/Camera.i
 	@echo ... Engine/Scene/Camera.s
+	@echo ... Engine/Scene/GameObject.obj
+	@echo ... Engine/Scene/GameObject.i
+	@echo ... Engine/Scene/GameObject.s
 	@echo ... Engine/Scene/Scenemap.obj
 	@echo ... Engine/Scene/Scenemap.i
 	@echo ... Engine/Scene/Scenemap.s
+	@echo ... Engine/UI/Panel.obj
+	@echo ... Engine/UI/Panel.i
+	@echo ... Engine/UI/Panel.s
 	@echo ... Engine/Utility/EngineTime.obj
 	@echo ... Engine/Utility/EngineTime.i
 	@echo ... Engine/Utility/EngineTime.s
+	@echo ... Engine/Utility/Helper.obj
+	@echo ... Engine/Utility/Helper.i
+	@echo ... Engine/Utility/Helper.s
 	@echo ... Engine/Utility/Input.obj
 	@echo ... Engine/Utility/Input.i
 	@echo ... Engine/Utility/Input.s
@@ -502,6 +727,24 @@ help:
 	@echo ... Engine/Utility/stb_impl.obj
 	@echo ... Engine/Utility/stb_impl.i
 	@echo ... Engine/Utility/stb_impl.s
+	@echo ... _deps/imgui-src/backends/imgui_impl_glfw.obj
+	@echo ... _deps/imgui-src/backends/imgui_impl_glfw.i
+	@echo ... _deps/imgui-src/backends/imgui_impl_glfw.s
+	@echo ... _deps/imgui-src/backends/imgui_impl_opengl3.obj
+	@echo ... _deps/imgui-src/backends/imgui_impl_opengl3.i
+	@echo ... _deps/imgui-src/backends/imgui_impl_opengl3.s
+	@echo ... _deps/imgui-src/imgui.obj
+	@echo ... _deps/imgui-src/imgui.i
+	@echo ... _deps/imgui-src/imgui.s
+	@echo ... _deps/imgui-src/imgui_draw.obj
+	@echo ... _deps/imgui-src/imgui_draw.i
+	@echo ... _deps/imgui-src/imgui_draw.s
+	@echo ... _deps/imgui-src/imgui_tables.obj
+	@echo ... _deps/imgui-src/imgui_tables.i
+	@echo ... _deps/imgui-src/imgui_tables.s
+	@echo ... _deps/imgui-src/imgui_widgets.obj
+	@echo ... _deps/imgui-src/imgui_widgets.i
+	@echo ... _deps/imgui-src/imgui_widgets.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

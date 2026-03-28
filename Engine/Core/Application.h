@@ -22,6 +22,8 @@ public:
     // Static callbacks required for GLFW
     static void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
     static void MouseCallback(GLFWwindow* window, double xpos, double ypos);
+    static std::vector<std::shared_ptr<GameObject>>& ActiveGameObjects();
+    void CreateCube(SceneNode &sceneNode);
 
 private:
     void ProcessInput(float dt);
@@ -34,7 +36,7 @@ private:
     // Engine Systems
     Renderer renderer;
     Scenemap scene;
-    std::vector<std::shared_ptr<GameObject>> gameObjects;
+    static std::vector<std::vector<GameObject>> gameObjects;
 
     Camera camera;
     std::vector<Light> lights;

@@ -7,6 +7,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "Helper.h"
 #include "Shader.h"
 #include "stb_image.h"
 #include "Vertex.h"
@@ -85,6 +86,7 @@ Mesh& Mesh::operator=(Mesh&& other) noexcept {
 
 void Mesh::SetupAttributes() {
     std::cout << "Size of Vertex struct: " << sizeof(Vertex) << " bytes" << std::endl;
+    Helper::Log("Size of Vertex struct: " + std::to_string(sizeof(Vertex)) + " bytes", LogLevel::WARNING);
     GLsizei stride = 14 * sizeof(float);  // 56 bytes
 
     // Location 0: Position (vec3) - offset 0 bytes

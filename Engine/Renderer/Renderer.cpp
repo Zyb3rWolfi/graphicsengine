@@ -8,9 +8,13 @@ using namespace glm;
 
 #include "Renderer.h"
 
-void Renderer::Draw(Scenemap &scene, Camera &camera, std::vector<Light> &lights) {
+void Renderer::Draw(Scenemap &scene, Camera &camera) {
+    std::vector<Light> activeLights;
+    for (auto &rootNode : scene.GetRootNodes()) {
+        GatherLights(rootNode, activeLights);
+    }
     for (auto &rootNode: scene.GetRootNodes()) {
-        RenderNode(rootNode, glm::mat4(1.0f), camera, lights);
+        RenderNode(rootNode, glm::mat4(1.0f), camera, activeLights);
 
     }
 }
@@ -18,9 +22,14 @@ void Renderer::Draw(Scenemap &scene, Camera &camera, std::vector<Light> &lights)
 
 void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat4 &parentTransform, Camera &camera,
                           std::vector<Light> &lights) {
+
     // 1 - First calculating the world transform for this node by combining the parent transform with the node's local transform
     // World = Parent * Local
-    glm::mat4 transform = parentTransform * glm::translate(glm::mat4(1.0f), node->GetPosition());
+    // Bug fix - The transform was using the glm::transltate function manually which did not allow me to change it rotation and scale
+    // Fixed this by making it transform multiply by the parent and the world.
+
+    glm::mat4 transform = parentTransform * node->GetWorldTransform();
+
     for (auto &meshNode: node->GetChildMeshes()) {
         // Skip if no shader is assigned to this mesh
         if (meshNode.shader == nullptr) {
@@ -108,5 +117,14 @@ void Renderer::RenderNode(const std::shared_ptr<SceneNode> &node, const glm::mat
     for (auto &childNode: node->GetChildNodes()) {
         // 4 - Recursively render child nodes, passing the current node's world transform as the new parent transform
         RenderNode(childNode, transform, camera, lights);
+    }
+}
+void Renderer::GatherLights(const std::shared_ptr<SceneNode> &node, std::vector<Light> &lightList) {
+    if (node->isLight() && node->light != nullptr) {
+        node->light->position = glm::vec3(node->GetWorldTransform() * glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
+        lightList.push_back(*node->light);
+    }
+    for (auto &childNode : node->GetChildNodes()) {
+        GatherLights(childNode, lightList);
     }
 }

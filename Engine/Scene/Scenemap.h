@@ -17,6 +17,8 @@
 #include "../Renderer/Shader.h"
 #include "../Renderer/Texture.h"
 
+struct Light;
+class Scenemap;
 class GameObject;
 // Forward declarations
 class SceneNode;
@@ -102,6 +104,12 @@ public:
               glm::vec3 scale = glm::vec3(1.0f));
 
     std::shared_ptr<GameObject> gameObject;
+    SceneNode* parent = nullptr;
+    std::shared_ptr<Light> light = nullptr;
+
+    bool isLight() const {
+        return light != nullptr;
+    }
     // ========== METHODS ==========
     // GetWorldTransform: Computes the 4x4 world transform matrix by combining
     //                    this node's and all parent nodes' transforms
@@ -126,6 +134,8 @@ public:
                       glm::vec3 localRot = glm::vec3(0.0f),
                       glm::vec3 localScale = glm::vec3(1.0f));
 
+    void RemoveChildNode(std::shared_ptr<SceneNode> node);
+
     // AddChildNode: Attach a new child node to this node
     // Parameters:
     //   node (std::shared_ptr<SceneNode>) - shared pointer to the child node
@@ -147,6 +157,8 @@ public:
     //   index (size_t) - index of the mesh to remove
     // Flow: Called by application code to modify the scene
     void RemoveChildMesh(size_t index);
+
+    void Delete(const std::shared_ptr<SceneNode>& node, Scenemap& scenemap);
 
     // Transform setters: Update the transform of this node
     // Parameters:
@@ -207,7 +219,7 @@ public:
     // Parameters:
     //   index (size_t) - index of the root node to remove
     // Flow: Called by application code to modify the scene
-    void RemoveRootNode(size_t index);
+    void RemoveRootNode(std::shared_ptr<SceneNode> node);
 
     // Clear: Remove all nodes from the scene
     // Flow: Called by application code to reset the scene

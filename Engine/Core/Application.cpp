@@ -22,6 +22,12 @@
 //   4. Main render loop
 // LINKS TO: All systems (renderer, scene, camera, input)
 
+
+std::vector<std::shared_ptr<GameObject>>& Application::ActiveGameObjects() {
+    static std::vector<std::shared_ptr<GameObject>> objects;
+    return objects;
+}
+
 // ========== CONSTRUCTOR ==========
 // Initializes application with given screen dimensions
 // Parameters:
@@ -59,8 +65,6 @@ Application::Application(unsigned int width, unsigned int height)
 
     // Add lights to the scene
     lights = {
-        //dirLight,    // Directional light acts like sun/moon
-        pointLight   // Point light acts like a torch or bulb
     };
 }
 
@@ -134,9 +138,11 @@ void Application::Run() {
     ResourceManager::LoadTexture("Images/wall/default.jpg", "wall_map");    // Diffuse/color texture
     ResourceManager::LoadTexture("Images/wall/normal.jpg", "wall_normal");  // Normal map for surface detail
 
-    auto root = scene.AddRootNode(glm::vec3(0.0f));
-
-
+    auto root = GameObject::Create("Example Root", &scene);
+    ActiveGameObjects().push_back(root);
+    auto light = GameObject::CreatePointLight("point light", &scene);
+    //light->SetColor(glm::vec3(0.8f, 0.7f, 0.5f));
+    //light->SetShader(ResourceManager::GetShader("LightShader"));
     for (int i = 0; i < 5; i++) {
         auto wall = GameObject::CreateCube("wall" + std::to_string(i));
         wall->SetTexture(ResourceManager::GetTexture("wall_map"));
@@ -144,8 +150,9 @@ void Application::Run() {
         wall->SetShader(ResourceManager::GetShader("MainShader"));
 
         wall->SetPosition(glm::vec3(i * 1.0f, 0.0f, -5.0f));
-        root->AddChildNode(wall->node);
-        gameObjects.push_back(wall);
+        root->node->AddChildNode(wall->node);
+        wall->node->parent = root->node.get();
+        ActiveGameObjects().push_back(wall);
 
     }
 
@@ -217,9 +224,7 @@ void Application::ProcessInput(float dt) {
 
 void Application::Update(float dt) {
     // Rotation logic from your loop
-    for (auto& root : scene.GetRootNodes()) {
-        root->Rotate(glm::vec3(0.0f, dt * 20.0f, 0.0f));
-    }
+
 }
 
 void Application::Render() {
@@ -227,9 +232,10 @@ void Application::Render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     camera.SetProjectionMatrix(glm::perspective(glm::radians(45.0f), (float)screenWidth / screenHeight, 0.1f, 50.0f));
-    renderer.Draw(scene, camera, lights);
+    renderer.Draw(scene, camera);
     // 2. Start ImGui Frame
-    Panel::scene = scene; // Pass the current scene to the panel for rendering
+    Panel::app = this; // Pass the application instance to the panel for input handling
+    Panel::scene = &this->scene ; // Pass the current scene to the panel for rendering
     Panel::Render();
 
 }
@@ -255,3 +261,15 @@ Application::~Application() {
     glfwTerminate();
     ResourceManager::Clean();
 }
+
+void Application::CreateCube(SceneNode &localscene) {
+    shared_ptr<GameObject> cube = GameObject::CreateCube("New Cube");
+    ActiveGameObjects().push_back(cube);
+    cube->SetTexture(ResourceManager::GetTexture("wall_map"));
+    cube->SetNormalTexture(ResourceManager::GetTexture("wall_normal"));
+    cube->SetShader(ResourceManager::GetShader("MainShader"));
+    cube->SetPosition(glm::vec3(0.0f, -1.0f, -5.0f));
+    cube->node->parent = &localscene;
+    localscene.AddChildNode(cube->node);
+}
+
