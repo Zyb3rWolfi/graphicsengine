@@ -81,15 +81,15 @@ void SceneNode::SetScale(glm::vec3 scale) {
     worldScale = scale;
 }
 
-glm::vec3 SceneNode::GetPosition() const {
+glm::vec3 &SceneNode::GetPosition() {
     return worldPosition;
 }
 
-glm::vec3 SceneNode::GetRotation() const {
+glm::vec3 &SceneNode::GetRotation() {
     return worldRotation;
 }
 
-glm::vec3 SceneNode::GetScale() const {
+glm::vec3 &SceneNode::GetScale() {
     return worldScale;
 }
 

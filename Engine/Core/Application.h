@@ -34,6 +34,8 @@ private:
     // Engine Systems
     Renderer renderer;
     Scenemap scene;
+    std::vector<std::shared_ptr<GameObject>> gameObjects;
+
     Camera camera;
     std::vector<Light> lights;
 

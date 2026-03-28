@@ -27,6 +27,8 @@ shared_ptr<GameObject> GameObject::CreateCube(const string& name) {
     static ShapeFactory factory;
     Mesh cubeMesh = factory.CreateCube();
 
+    gameObject->node->gameObject = gameObject;  // Set back-reference for potential future use
+
     // Add mesh to scene node using move semantics
     gameObject->node->AddChildMesh(std::move(cubeMesh),
         nullptr,  // texture

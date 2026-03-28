@@ -3,11 +3,36 @@ project(graphicsengine)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# 1. Properly list all files once
+include(FetchContent)
+FetchContent_Declare(
+        imgui
+        GIT_REPOSITORY https://github.com/ocornut/imgui.git
+        GIT_TAG        v1.90.4
+)
+
+# Use Populate instead of MakeAvailable for ImGui
+FetchContent_GetProperties(imgui)
+if(NOT imgui_POPULATED)
+    FetchContent_Populate(imgui)
+endif()
+
+# 1. Properly list all files
 add_executable(graphicsengine
         main.cpp
+        # ImGui Core (Now using the populated path)
+        ${imgui_SOURCE_DIR}/imgui.cpp
+        ${imgui_SOURCE_DIR}/imgui_draw.cpp
+        ${imgui_SOURCE_DIR}/imgui_tables.cpp
+        ${imgui_SOURCE_DIR}/imgui_widgets.cpp
+        # ImGui Backends
+        ${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
+        ${imgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
+
+        # Engine Core
         Engine/Core/Application.cpp
         Engine/Core/Application.h
+
+        # Engine Renderer
         Engine/Renderer/Renderer.cpp
         Engine/Renderer/Renderer.h
         Engine/Renderer/Mesh.cpp
@@ -18,11 +43,17 @@ add_executable(graphicsengine
         Engine/Renderer/Texture.h
         Engine/Renderer/vertex.cpp
         Engine/Renderer/Vertex.h
+
+        # Engine Scene & Objects
         Engine/Scene/Camera.cpp
         Engine/Scene/Camera.h
         Engine/Scene/Scenemap.cpp
         Engine/Scene/Scenemap.h
         Engine/Scene/Light.h
+        Engine/Scene/GameObject.cpp
+        Engine/Scene/GameObject.h
+
+        # Engine Utility (Fixed: removed duplicate EngineTime.cpp)
         Engine/Utility/ShapeFactory.cpp
         Engine/Utility/ShapeFactory.h
         Engine/Utility/stb_impl.cpp
@@ -30,25 +61,24 @@ add_executable(graphicsengine
         Engine/Utility/Input.h
         Engine/Utility/EngineTime.cpp
         Engine/Utility/EngineTime.h
-        Engine/Utility/EngineTime.cpp
         Engine/Utility/ResourceManager.cpp
         Engine/Utility/ResourceManager.h
-        Engine/Scene/GameObject.cpp
-        Engine/Scene/GameObject.h
-
+        Engine/UI/Panel.cpp
+        Engine/UI/Panel.h
 )
 
-# 2. Add your Engine subdirectories to the include path
-# This allows "#include "stb_image.h"" to find the local file from anywhere
+# 2. Add include paths
 target_include_directories(graphicsengine PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/Engine/Core
         ${CMAKE_CURRENT_SOURCE_DIR}/Engine/Renderer
         ${CMAKE_CURRENT_SOURCE_DIR}/Engine/Scene
         ${CMAKE_CURRENT_SOURCE_DIR}/Engine/Utility
+        ${imgui_SOURCE_DIR}
+        ${imgui_SOURCE_DIR}/backends
 )
 
-# 3. Standard Packages
+# 3. Linking
 find_package(glfw3 CONFIG REQUIRED)
 target_link_libraries(graphicsengine PRIVATE glfw)
 
@@ -58,7 +88,6 @@ target_link_libraries(graphicsengine PRIVATE glad::glad)
 find_package(glm CONFIG REQUIRED)
 target_link_libraries(graphicsengine PRIVATE glm::glm)
 
-find_package(Stb REQUIRED)
-target_include_directories(graphicsengine PRIVATE ${Stb_INCLUDE_DIR})
-
-# REMOVE find_package(Stb) - you are compiling it manually now!
+# vcpkg usually needs explicit OpenGL linking for backends
+find_package(OpenGL REQUIRED)
+target_link_libraries(graphicsengine PRIVATE OpenGL::GL)

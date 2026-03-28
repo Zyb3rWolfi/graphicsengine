@@ -19,7 +19,7 @@ using namespace std;
 // ========== GAMEOBJECT CLASS ==========
 // Wraps a SceneNode and Mesh for easy management
 // Similar to Unity GameObject pattern
-class GameObject {
+class GameObject : public std::enable_shared_from_this<GameObject> {
 public:
     // Constructor
     GameObject();

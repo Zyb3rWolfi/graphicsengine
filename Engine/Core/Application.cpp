@@ -1,4 +1,8 @@
 #include "Application.h"
+
+#include <imgui.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
 #include <iostream>
 
 #include "GameObject.h"
@@ -7,6 +11,7 @@
 #include "../Utility/EngineTime.h"
 #include "../Utility/ShapeFactory.h"
 #include "../Renderer/Mesh.h"
+#include "Engine/UI/Panel.h"
 
 // ========== APPLICATION CLASS ==========
 // Application: Main engine class that manages the entire graphics engine
@@ -66,7 +71,6 @@ Application::Application(unsigned int width, unsigned int height)
 bool Application::Init() {
     // Initialize GLFW library
     if (!glfwInit()) return false;
-
     // Request OpenGL 3.3 Core Profile
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -90,6 +94,7 @@ bool Application::Init() {
     Input::MapAction("MoveLeft",    GLFW_KEY_A);
     Input::MapAction("MoveRight",   GLFW_KEY_D);
     Input::MapAction("MoveBack",    GLFW_KEY_S);
+    Input::MapAction("Debug",       GLFW_KEY_F1);
     Input::MapAction("Quit",        GLFW_KEY_ESCAPE);
 
     // Register this Application instance with GLFW callbacks
@@ -102,7 +107,7 @@ bool Application::Init() {
     // Load OpenGL function pointers using GLAD
     // This initializes all OpenGL function pointers for the current OpenGL version
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) return false;
-
+    Panel::Initialize(window);
     // Enable depth testing for 3D rendering
     // This ensures closer objects render in front of farther ones
     glEnable(GL_DEPTH_TEST);
@@ -131,19 +136,17 @@ void Application::Run() {
 
     auto root = scene.AddRootNode(glm::vec3(0.0f));
 
-    auto wall = GameObject::CreateCube("wall");
-    wall->SetTexture(ResourceManager::GetTexture("wall_map"));
-    wall->SetNormalTexture(ResourceManager::GetTexture("wall_normal"));
-    wall->SetShader(ResourceManager::GetShader("MainShader"));
 
     for (int i = 0; i < 5; i++) {
-        auto wall = GameObject::CreateCube("wall");
+        auto wall = GameObject::CreateCube("wall" + std::to_string(i));
         wall->SetTexture(ResourceManager::GetTexture("wall_map"));
         wall->SetNormalTexture(ResourceManager::GetTexture("wall_normal"));
         wall->SetShader(ResourceManager::GetShader("MainShader"));
 
         wall->SetPosition(glm::vec3(i * 1.0f, 0.0f, -5.0f));
         root->AddChildNode(wall->node);
+        gameObjects.push_back(wall);
+
     }
 
     // ========== MAIN RENDER LOOP ==========
@@ -194,6 +197,22 @@ void Application::ProcessInput(float dt) {
         camera.ProcessKeyboard(BACKWARD, dt);
     }
 
+    static bool wasDebugPressed = false;
+    bool isdebugPressed = Input::IsActionActive("Debug");
+    // Debug mode toggle
+    if (isdebugPressed && !wasDebugPressed) {
+        // Unlock the mouse cursor when F1 is pressed for debugging and lock it again when released
+        static bool debugMode = false;
+        debugMode = !debugMode;
+        if (debugMode) {
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+        } else {
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+        }
+    }
+    wasDebugPressed = isdebugPressed;
+
+
 }
 
 void Application::Update(float dt) {
@@ -209,12 +228,16 @@ void Application::Render() {
 
     camera.SetProjectionMatrix(glm::perspective(glm::radians(45.0f), (float)screenWidth / screenHeight, 0.1f, 50.0f));
     renderer.Draw(scene, camera, lights);
+    // 2. Start ImGui Frame
+    Panel::scene = scene; // Pass the current scene to the panel for rendering
+    Panel::Render();
+
 }
 
 // Global-to-Class bridge for GLFW callbacks
 void Application::MouseCallback(GLFWwindow* window, double xpos, double ypos) {
     auto app = static_cast<Application*>(glfwGetWindowUserPointer(window));
-    if (app) {
+    if (app && glfwGetInputMode(window, GLFW_CURSOR) == GLFW_CURSOR_DISABLED) {
         // Simple logic from main.cpp
         static float lastX = 400, lastY = 300;
         static bool firstMouse = true;

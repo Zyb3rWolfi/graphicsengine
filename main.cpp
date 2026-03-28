@@ -1,7 +1,7 @@
 #include "Engine/Core/Application.h"
 
 int main() {
-    Application app(800, 600);
+    Application app(1920, 1080);
 
     if (app.Init()) {
         app.Run();

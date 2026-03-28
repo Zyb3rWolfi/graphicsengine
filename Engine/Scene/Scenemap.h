@@ -17,6 +17,7 @@
 #include "../Renderer/Shader.h"
 #include "../Renderer/Texture.h"
 
+class GameObject;
 // Forward declarations
 class SceneNode;
 
@@ -100,6 +101,7 @@ public:
               glm::vec3 rot = glm::vec3(0.0f),
               glm::vec3 scale = glm::vec3(1.0f));
 
+    std::shared_ptr<GameObject> gameObject;
     // ========== METHODS ==========
     // GetWorldTransform: Computes the 4x4 world transform matrix by combining
     //                    this node's and all parent nodes' transforms
@@ -159,9 +161,9 @@ public:
     // Transform getters: Get the current transform of this node
     // Returns: The current position, rotation, or scale
     // Used by: Application code to query node transforms
-    [[nodiscard]] glm::vec3 GetPosition() const;
-    [[nodiscard]] glm::vec3 GetRotation() const;
-    [[nodiscard]] glm::vec3 GetScale() const;
+    [[nodiscard]] glm::vec3& GetPosition();
+    [[nodiscard]] glm::vec3& GetRotation();
+    [[nodiscard]] glm::vec3& GetScale();
 
     // Translate/Rotate/Scale: Modify the transform by adding to the current values
     // Parameters:
